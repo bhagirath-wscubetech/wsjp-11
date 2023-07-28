@@ -1,0 +1,183 @@
+* {
+    /* select all elements */
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    background: black;
+}
+
+.main {
+    width: 1170px;
+    height: 1600px;
+    background: white;
+    margin: auto;
+}
+
+.top-contact {
+    width: 1170px;
+    height: 40px;
+    background: #343130;
+    color: white;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+.top-left {
+    width: 500px;
+    height: 40px;
+    float: left;
+}
+
+.top-right {
+    width: 290px;
+    height: 40px;
+    float: right;
+}
+
+.top-icon {
+    float: left;
+    margin: 10px 13px 0 23px;
+    /* top right bottom left */
+}
+
+.top-text {
+    float: left;
+    margin-top: 8px;
+}
+
+.menu-container {
+    width: 1170px;
+    height: 140px;
+}
+
+.logo {
+    width: 165px;
+    margin: 10px 0 0 50px;
+    float: left;
+}
+
+.menu {
+    width: 900px;
+    height: 140px;
+    float: right;
+}
+
+.menu-item {
+    color: black;
+    font-family: Arial;
+    float: left;
+    font-weight: bold;
+    /* normal | bold */
+    margin: 0px 35px;
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+.work-container {
+    width: 1110px;
+    height: 220px;
+    border: 1px red solid;
+    margin: 20px 30px;
+    /* top-bottom left-right */
+}
+
+.work-box {
+    width: 270px;
+    height: 220px;
+    border: 1px black solid;
+    float: left;
+    margin-left: 7px;
+}
+
+.box-overlay {
+    width: 270px;
+    height: 150px;
+    /* 220 - 70  */
+    color: white;
+    font-size: 25px;
+    font-family: arial;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.middle-right {
+    width: 850px;
+    height: 835px;
+    border: 1px black solid;
+    margin: auto;
+}
+
+.course-box {
+    width: 210px;
+    height: 230px;
+    margin-left: 30px;
+    margin-top: 20px;
+    border: 1px solid#e6611c;
+    float: left;
+}
+
+.box-top {
+    width: 210px;
+    height: 140px;
+    padding-top: 20px;
+    background-color: #e6611c;
+}
+
+.box-bottom {
+    width: 210px;
+    height: 50px;
+    font-size: 22px;
+    color: #e6611c;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.box-ring {
+    width: 90px;
+    height: 80px;
+    border: 10px solid white;
+    margin: auto;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 50%;
+}
+
+
+.course-listing-contaier{
+    width: 830px;
+    height: 250px;
+    border:1px black solid;
+    margin: 30px auto;
+}
+
+.course-item{
+    width: 390px;
+    height: 40px;
+    margin: 10px 10px;
+    float: left;
+}
+.item-img{
+    width: 40px;
+    height:40px;
+    margin-right:20px;
+    border-radius: 50%;
+    background: #e6611c;
+    float: left;
+}
+.item-text{
+    width: 320px;
+    height: 35px;
+    padding-top: 5px;
+    font-family: Arial;
+    font-size: 20px;
+    float: left;
+}

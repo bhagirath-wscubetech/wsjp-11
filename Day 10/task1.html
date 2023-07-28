@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background: rgb(255, 0, 255);
+            margin: 50px auto;
+            transition: 1s;
+            /* mouse leave */
+            border: 0px black solid;            
+        }
+        .box:hover {
+            transition: 4s;
+            /* mouse enter */
+            width: 600px;
+            height: 600px;
+            background: rgb(188,143,143);
+            border: 5px black solid;
+            color: white;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Hello
+    </div>
+</body>
+
+</html>
