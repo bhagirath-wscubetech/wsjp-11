@@ -24,34 +24,34 @@
             list-style: none;
             display: flex;
             align-items: center;
+            position: relative;
             justify-content: space-around;
         }
 
         #main-menu>li {
             padding: 20px 0;
             cursor: pointer;
-            position: relative;
+            /* position: relative; */
         }
 
         #main-menu>li:hover .child-menu {
-            top: 60px;
+            transform: scaleY(1);
+            transition: 0.5s;
             opacity: 1;
-            visibility: visible;
         }
 
         .child-menu {
-            width: 200px;
+            transform-origin: top center;
+            width: 100%;
             background: white;
             list-style: none;
             box-shadow: 0px 0px 1px grey;
             position: absolute;
-            transition:5s;
-            top: 300px;
+            top: 60px;
             left: 0;
             opacity: 0;
+            transform: scaleY(0);
             /* opacity hide the element from the user */
-            visibility: hidden;
-            /* visibility hides the element from the user and mouse */
         }
 
         .child-menu li {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 500px;
+            height: 300px;
+            border-bottom: 4px black solid;
+            margin: auto;
+            display: flex;
+            overflow: hidden;
+            justify-content: space-around;
+        }
+
+        .bars {
+            width: 30px;
+            height: 100%;
+            background: orange;
+            animation: loader 1s alternate infinite;
+            transform: translateY(100%);
+        }
+
+        @keyframes loader {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        .second .bars {
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="bars"></div>
+        <div class="bars" style="animation-delay: 0.2s;"></div>
+        <div class="bars" style="animation-delay: 0.4s;"></div>
+        <div class="bars" style="animation-delay: 0.6s;"></div>
+        <div class="bars" style="animation-delay: 0.8s;"></div>
+    </div>
+    <div class="parent second">
+        <div class="bars"></div>
+        <div class="bars" style="animation-delay: 0.2s;"></div>
+        <div class="bars" style="animation-delay: 0.4s;"></div>
+        <div class="bars" style="animation-delay: 0.6s;"></div>
+        <div class="bars" style="animation-delay: 0.8s;"></div>
+    </div>
+</body>
+
+</html>

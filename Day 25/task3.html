@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 1000px;
+            height: 500px;
+            border: 2px black solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 200px;
+            height: 50px;
+            background: tan;
+            animation: race 10s;
+            /* animation-fill-mode: ; */
+        }
+
+        @keyframes race {
+            0% {
+                transform: translateX(0);
+            }
+
+            40% {
+                transform: translateX(800px);
+            }
+
+            60% {
+                transform: translateX(800px);
+            }
+
+            to {
+                transform: translateX(00px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box" style="animation-timing-function: linear;">linear</div>
+        <div class="box" style="animation-timing-function: ease;">ease</div>
+        <div class="box" style="animation-timing-function: ease-in;">ease-in</div>
+        <div class="box" style="animation-timing-function: ease-out;">ease-out</div>
+        <div class="box" style="animation-timing-function: ease-in-out;">ease-in-out</div>
+    </div>
+</body>
+
+</html>

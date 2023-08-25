@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 500px;
+            height: 200px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .box {
+            width: 30px;
+            height: 200px;
+            border-radius: 30px;
+            animation: google 2s infinite;
+        }
+
+        @keyframes google {
+            0% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(0.5);
+            }
+
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            background: #2c3e50;
+            border-radius: 10px;
+            animation: 2s loader infinite;
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+                border-radius: 10px;
+            }
+
+            25% {
+                transform: rotate(45deg);
+                border-radius: 10px 10px 60px 10px;
+            }
+
+            50% {
+                transform: rotate(135deg);
+                border-radius: 10px 60px 10px 10px;
+            }
+
+            75% {
+                transform: rotate(225deg);
+                border-radius: 60px 10px 10px 10px;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                border-radius: 10px;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="loader"></div>
+    </div>
+    <div class="parent">
+        <div class="box" style="background: #1abc9c;"></div>
+        <div class="box" style="background: #3498db; animation-delay: 0.2s;"></div>
+        <div class="box" style="background: #9b59b6; animation-delay: 0.4s;"></div>
+        <div class="box" style="background: #34495e; animation-delay: 0.6s;"></div>
+    </div>
+
+</body>
+
+</html>

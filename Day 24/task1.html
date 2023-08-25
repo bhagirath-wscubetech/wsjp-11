@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            position: relative;
+            height: 500px;
+            border: 1px black solid;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: 5s 3 box alternate-reverse 2s;
+            /* animation-name: box;
+            animation-duration:5s;
+            animation-delay: 2s;
+            animation-iteration-count: 3;
+            animation-direction: alternate-reverse; */
+            /* 
+                normal
+            */
+            position: absolute;
+        }
+
+        @keyframes box {
+
+            0%,
+            100% {
+                background: red;
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                background: yellow;
+                top: 0;
+                left: 300px;
+            }
+
+            50% {
+                background: blue;
+                top: 400px;
+                left: 300px;
+            }
+
+            75% {
+                background: fuchsia;
+                top: 400px;
+                left: 00px;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
