@@ -1,0 +1,44 @@
+<script>
+    // function add(a, b) {
+    //     console.log('Hii');
+    //     return a + b;
+    //     // last statement of the function
+    //     console.log('Hello');
+    // }
+
+    // var c = add(2, 3);
+    // var d = add(c, 20);
+    // var f = add(c, d);
+    // console.log(f);
+
+    function add(a, b, opr) {
+        if (opr == "+") {
+            return a + b;
+        } else if (opr == "-") {
+            return a - b;
+        } else if (opr == "x") {
+            return a * b;
+        } else if (opr == "/") {
+            return a / b;
+        } else {
+            console.error("Please sahi operator chune");
+        }
+    }
+
+    var res1 = add(2, 3, "+");
+    var res2 = add(20, 10, "-");
+    var res3 = add(100, 200, "x");
+    var res4 = add(1, 2, "/")
+    // add(2, 2, "Hello");
+
+    // function greet(uname) {
+    //     console.log('Hello ' + uname + ' Welcome');
+    // }
+
+    // greet('John'); //call
+    // greet('Jenny'); //call
+    // greet('Nikita'); //call
+    // greet("Rohit");
+    // greet();
+
+</script>

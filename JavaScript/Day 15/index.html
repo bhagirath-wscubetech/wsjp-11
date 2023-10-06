@@ -1,0 +1,45 @@
+<script>
+    function power(num, p, ans = 1) {
+        ans = ans * num;
+        p--;
+        if (p != 0) {
+            return power(num, p, ans);
+        }else{
+            return ans;
+        }
+    }
+
+    var res = power(3,3);
+    console.log(res);
+
+
+
+    // function range(a, b, arr = []) {
+    //     arr.push(a);
+    //     a++;
+    //     if (a != b) {
+    //         range(a, b, arr);
+    //     }
+    //     return arr;
+    // }
+
+    // var result = range(2, 20);
+    // console.log(result);
+
+
+    // function series(a, b, count = 0) {
+    //     if (count == 0) {
+    //         console.log(a);
+    //         console.log(b);
+    //     } else {
+    //         console.log(b);
+    //     }
+    //     var c = a + b;
+    //     count++;
+    //     if (count != 8) {
+    //         series(b, c, count);
+    //         // recursion
+    //     }
+    // }
+    // series(0, 1);
+</script>

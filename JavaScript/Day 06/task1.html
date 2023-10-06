@@ -1,0 +1,20 @@
+<script>
+    var units = 1200;
+    var total, rem;
+    if (units >= 0 && units < 200) {
+        total = units * 2.5;
+    } else if (units >= 200 && units < 400) {
+        rem = units - 200;
+        total = (200 * 2.5) + (rem * 3.0);
+    } else if (units >= 400 && units < 600) {
+        rem = units - 400;
+        total = (200 * 2.5) + (200 * 3.0) + (rem * 3.5)
+    } else if (units >= 600 && units < 1000) {
+        rem = units - 600;
+        total = (200 * 2.5) + (200 * 3.0) + (200 * 3.5) + (rem * 4)
+    } else {
+        rem = units - 1000;
+        total = (200 * 2.5) + (200 * 3.0) + (200 * 3.5) + (400 * 4) + (rem * 4.5)
+    }
+    console.log(total);
+</script>

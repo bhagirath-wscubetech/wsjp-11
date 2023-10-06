@@ -1,0 +1,29 @@
+<button onclick="details.getDetails()">Click Me</button>
+<button onclick="emp.demo()">Click Me2</button>
+<script>
+    // var a = "Testing";
+    // var b = "Hello";
+    // console.log("This is " + b + "-" + a);
+    // es6 template literals
+    // console.log(`This is ${b}-${a}`);
+
+    var details = {
+        name: "Bhagirath",
+        email: "bhagirath@wscubetech.com",
+        contact: "123456789",
+        getDetails: function () {
+            console.log(`The email of ${this.name} is ${this.email} - ${2 + 2}`);
+        }
+    }
+
+    var emp = {
+        name: "Prem",
+        salary: 1000000,
+        age: 30,
+        demo: function () {
+            console.log(`The salary of ${this.name} is ${this.salary}`);
+        }
+    }
+
+    console.log(emp.name);
+</script>

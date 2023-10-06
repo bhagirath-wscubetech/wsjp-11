@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box{
+            width: 300px;
+            font-size: 100px;
+            text-align: center;
+            height: 300px;
+            border:2px black solid;
+        }
+        .tray{
+            width: 1000px;
+            margin: auto;
+            text-align: center;
+            font-size: 60px;
+        }
+        button{
+            font-size: inherit;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box" id="box1">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="">
+        </div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
+    <div class="tray">
+        <button onclick="first()"> > </button>
+        <button onclick="second()"> > </button>
+    </div>
+    <div class="tray">
+        <button onclick="third()"> < </button>
+        <button onclick="fourth()"> < </button>
+    </div>
+    <script>
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+
+        function first(){
+            box2.innerHTML = box1.innerHTML;
+            box1.innerHTML = "";
+        }
+
+        function second(){
+            box3.innerHTML = box2.innerHTML;
+            box2.innerHTML = "";
+        }
+
+        function third(){
+            box1.innerHTML = box2.innerHTML;
+            box2.innerHTML = ""
+        }
+        function fourth(){
+            box2.innerHTML = box3.innerHTML;
+            box3.innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<script>
+    var units = 900;
+    // 0 - 200 - 2.5
+    // 200 - 400 - 3
+    // 400 - 600 - 3.5
+    // 600 - 800 - 
+
+    var num = parseInt(units / 200);
+    var rem = units % 200;
+    console.log(num);
+    console.log(rem);
+
+    if (num == 1) {
+        var total = (200 * 2.5) + (rem * 3.0)
+    } else if (num == 2) {
+        var total = (200 * 2.5) + (200 * 3.0)
+            + (rem * 3.5)
+    } else if (num == 3) {
+        var total = (200 * 2.5) + (200 * 3.0)
+            + (200 * 3.5) + (rem * 4.0)
+    } else if (num == 4) {
+        console.log(rem);
+        var total = (200 * 2.5) + (200 * 3.0)
+            + (200 * 3.5) + (rem * 4.5);
+    } else {
+        var total = (rem * 2.5)
+    }
+
+    console.log(total);
+
+</script>

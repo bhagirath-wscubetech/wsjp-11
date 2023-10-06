@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 300px;
+            font-size: 60px;
+            text-align: center;
+            margin: auto;
+        }
+
+        button {
+            font-size: inherit;
+            padding: 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <h1 id="res">0</h1>
+        <h1 id="price">₹ 0</h1>
+        <button onclick="desc()">-</button>
+        <button onclick="inc()">+</button>
+    </div>
+    <script>
+        var resBox = document.getElementById("res");
+        // camelCase
+        var priceBox = document.getElementById("price");
+        var count = 0;
+        console.log(resBox.innerText); // get
+        function inc() {
+            if (count == 10) return; // end of the function
+            count++;
+            resBox.innerText = count; // set
+            priceBox.innerText = "₹" + count * 100;
+        }
+        function desc() {
+            if (count == 0) return; // end of the function
+            count--;
+            resBox.innerText = count; // set
+            priceBox.innerText = "₹" + count * 100;
+        }
+    </script>
+</body>
+
+</html>
