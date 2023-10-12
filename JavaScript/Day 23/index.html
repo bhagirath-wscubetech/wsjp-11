@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .parent {
+            width: 1000px;
+            height: 300px;
+            border: 2px black solid;
+        }
+
+        .bg-danger {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- oncontextmenu = right click -->
+    <div class="parent" onclick="a()"></div>
+    <script>
+        var parent = document.getElementsByClassName("parent")[0];
+        function a() {
+            // parent.classList.add("bg-danger");
+            parent.classList.toggle("bg-danger")
+        }
+        // function b() {
+        //     parent.classList.remove("bg-danger");
+        // }
+    </script>
+</body>
+
+</html>

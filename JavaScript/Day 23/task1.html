@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        .parent {
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+        }
+
+        .box {
+            text-align: justify;
+            margin-bottom: 5px;
+            /* padding: 10px 20px; */
+        }
+
+        .box h1 {
+            border: 1px lightgrey solid;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .box p {
+            border: 1px lightgrey solid;
+            height: 0px;
+            padding: 10px;
+            overflow: hidden;
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .open {
+            opacity: 1 !important;
+            height: 200px !important;
+            /* overflow: unset !important; */
+        }
+
+        .arrow {
+            transition: 0.5s;
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 6px;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 1
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+
+        <div class="box">
+            <h1 onclick="openPara(this)">
+                This is the first heading 2
+                <span class="arrow">
+                    &darr;
+                </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore mollitia ex eum similique deserunt
+                pariatur sint dolorem quod provident voluptas, temporibus aspernatur repellat. Cupiditate, fuga. Omnis
+                illum itaque provident aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                nesciunt quasi itaque labore. At quibusdam minima soluta a totam. Consequuntur placeat nam aperiam sit
+                est earum quia praesentium quo vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+                voluptate. Aliquam repudiandae illum, sapiente explicabo blanditiis modi consequuntur quas, fugit porro
+                totam ullam, est quo nobis voluptatibus earum delectus nemo. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Optio, aspernatur eum ut pariatur provident beatae quo dolor ipsa ducimus facere
+                distinctio? Perspiciatis commodi mollitia eaque, accusantium a quia assumenda ratione. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Velit voluptatem suscipit voluptas temporibus, voluptatibus
+                eius ad sed, expedita deserunt repellendus, iste porro quisquam itaque eos assumenda. Quas quae ea
+                atque.</p>
+        </div>
+    </div>
+    <script>
+        // traversing
+
+        function openPara(elem) {
+
+            if (elem.nextElementSibling.classList.contains("open") == false) {
+                closeItems();
+                elem.nextElementSibling.classList.toggle("open");
+                elem.children[0].classList.toggle("rotate");
+            } else {
+                closeItems();
+            }
+
+        }
+
+        function closeItems() {
+            var openPara = document.getElementsByClassName("open");
+            if (openPara.length != 0) {
+                openPara[0].classList.remove("open");
+            }
+            var openArrow = document.getElementsByClassName("rotate");
+            if (openArrow.length != 0) {
+                openArrow[0].classList.remove("rotate");
+            }
+        }
+    </script>
+</body>
+
+</html>

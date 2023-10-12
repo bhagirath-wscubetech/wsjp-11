@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: verdana;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .input {
+            width: 50%;
+            border: 1px black solid;
+        }
+
+        #output {
+            width: 50%;
+            border: 1px red solid;
+            padding: 20px 40px;
+            background-size: cover;
+        }
+
+        .input {
+            padding: 40px;
+            gap: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input * {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        #output .output-box:nth-child(1) {
+            margin: 50px 0;
+        }
+
+        #output .output-box:nth-child(2) {
+            height: 350px;
+        }
+
+        #output .output-box:nth-child(3) {
+            text-align: right;
+            margin: 20px 0;
+        }
+
+        .font-box button {
+            padding: 5px;
+            margin-top: 10px;
+            min-width: 30px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="input">
+            <input onkeyup="getData(0)" type="text" placeholder="To" class="input-box">
+            <textarea onkeyup="getData(1)" cols="30" placeholder="Message" class="input-box" rows="10"></textarea>
+            <input onkeyup="getData(2)" type="text" placeholder="From" class="input-box">
+            <input onkeyup="getData(3)" type="text" placeholder="From" class="input-box">
+        </div>
+        <div id="output">
+            <h3 class="output-box">To: </h3>
+            <p class="output-box"></p>
+            <h3 class="output-box">From:</h3>
+            <h3 class="output-box">From:</h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="font-box">
+            <button onclick="toggleFont(true)">+</button>
+            <button onclick="toggleFont(false)">-</button>
+            <button onclick="reset()">Reset</button>
+            <input type="color" value="#FFFFFF" onchange="setColor(this.value)">
+            <img src="https://picsum.photos/id/237/200/300" alt="" width="50" onclick="setImg(this.src)">
+            <img src="https://picsum.photos/id/238/200/300" alt="" width="50" onclick="setImg(this.src)">
+            <img src="https://picsum.photos/id/239/200/300" alt="" width="50" onclick="setImg(this.src)">
+            <img src="https://picsum.photos/id/240/200/300" alt="" width="50" onclick="setImg(this.src)">
+            <img src="https://picsum.photos/id/241/200/300" alt="" width="50" onclick="setImg(this.src)">
+            <img src="https://picsum.photos/id/242/200/300" alt="" width="50" onclick="setImg(this.src)">
+        </div>
+    </div>
+    <script>
+        var inputBox = document.getElementsByClassName("input-box");
+        var outputBox = document.getElementsByClassName("output-box");
+        var output = document.getElementById("output");
+        var fontSize = 16;
+
+        function reset() {
+            fontSize = 16;
+            output.style.fontSize = fontSize + "px";
+        }
+        function setImg(src) {
+            output.style.backgroundImage = `url(${src})`;
+        }
+
+        function setColor(colorCode) {
+            output.style.backgroundImage = "";
+            output.style.backgroundColor = colorCode;
+        }
+
+        function toggleFont(flag) {
+            if (flag == true) {
+                fontSize += 2;
+            } else {
+                fontSize -= 2;
+            }
+            output.style.fontSize = fontSize + "px";
+        }
+
+        function getData(index) {
+            outputBox[index].innerText = inputBox[index].value;
+        }
+    </script>
+</body>
+
+</html>
