@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+            /* gap: 10px; */
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        .parent span {
+            cursor: pointer;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            color: white;
+            height: 100%;
+            width: 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .left {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+            left: 0;
+        }
+
+        .right {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+            right: 0;
+        }
+
+        .box {
+            flex-shrink: 0;
+            width: 100%;
+            transition: 1s;
+            transform: translateX(0);
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            <img src="https://picsum.photos/600/300?random=1" alt="">
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/600/300?random=2" alt="">
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/600/300?random=3" alt="">
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/600/300?random=4" alt="">
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/600/300?random=5" alt="">
+        </div>
+        <span onclick="prev()" class="left">
+            <i class="fa-solid fa-chevron-left"></i></span>
+        <span onclick="next()" class="right">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+    </div>
+
+    <script src="https://kit.fontawesome.com/959eda728d.js" crossorigin="anonymous"></script>
+    <script>
+        var boxes = document.querySelectorAll(".box");
+
+        var count = 0;
+        function next() {
+            if (count == boxes.length - 1) return;
+
+            count++;
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].style.transform = `translateX(-${count * 100}%)`;
+            }
+        }
+        function prev() {
+            if (count == 0) return;
+            count--;
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].style.transform = `translateX(-${count * 100}%)`;
+            }
+        }
+    </script>
+</body>
+
+</html>
