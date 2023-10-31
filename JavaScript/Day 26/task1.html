@@ -1,0 +1,16 @@
+<button onclick="demo()">Click</button>
+<button onclick="stop()">Stop</button>
+<script>
+    var timeoutHolder;
+    function demo() {
+        timeoutHolder = setTimeout(
+            function () {
+                console.log('helllo');
+            },
+            10000
+        )
+    }
+    function stop() {
+        clearTimeout(timeoutHolder);
+    }
+</script>

@@ -1,0 +1,22 @@
+<h1 id="res">Redirecting in 10 seconds</h1>
+<script>
+    var res = document.querySelector("#res");
+    var count = 10;
+
+    setInterval(
+        function () {
+            count--;
+            if (count >= 0){
+                res.innerText = `Redirecting in ${count} seconds`;
+            }
+        },
+        1000
+    )
+
+    setTimeout(
+        function () {
+            window.location.href = "https://wscubetech.com";
+        },
+        10000
+    )
+</script>

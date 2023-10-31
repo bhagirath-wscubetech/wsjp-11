@@ -1,0 +1,11 @@
+.accordion-button:not(.collapsed) {
+    background-color: gold !important;
+    color: black !important;
+}
+.accordion-button:focus {
+    border-color: transparent !important;
+    box-shadow: unset !important;
+}
+.mera-group button:hover{
+    background-color: darkblue !important;
+}

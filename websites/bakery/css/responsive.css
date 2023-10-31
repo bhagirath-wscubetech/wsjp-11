@@ -1,0 +1,26 @@
+@media (min-width:768px) {
+    #banner {
+        height: 800px;
+    }
+}
+
+@media (min-width:992px) {
+    #menu {
+        position: static;
+        background-color: transparent;
+        color: #000;
+        height: auto;
+        flex-direction: row;
+        justify-content: end;
+        align-items: unset;
+    }
+    .top-tray {
+        display: flex;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    #banner {
+        height: 100vh;
+    }
+}

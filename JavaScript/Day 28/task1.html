@@ -1,0 +1,7 @@
+<input id="d_inp" type="date" max="2023-10-18">
+<script>
+    var d_inp = document.querySelector("#d_inp");
+    var date = new Date();
+    d_inp.max = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    d_inp.min = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() - 5}`;
+</script>

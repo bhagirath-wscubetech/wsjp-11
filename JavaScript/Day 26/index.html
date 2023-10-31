@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>0</h1>
+        <button id="start">Start</button>
+        <button id="end">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script>
+        var start = document.querySelector("#start");
+        var end = document.querySelector("#end");
+        var reset = document.querySelector("#reset");
+        var res = document.querySelector("h1");
+        var count = 0;
+        var intervalHolder; // global
+
+        start.addEventListener(
+            "click",
+            function () {
+                start.disabled = true;
+                intervalHolder = setInterval(
+                    function () {
+                        count++;
+                        res.innerText = count;
+                        if (count == 20) stop();
+                    },
+                    1000
+                )
+            }
+        )
+        reset.addEventListener(
+            "click",
+            function () {
+                stop();
+                count = 0;
+                res.innerText = 0;
+            }
+        )
+        end.addEventListener("click", stop)
+
+        function stop() {
+            start.disabled = false;
+            clearInterval(intervalHolder);
+        }
+    </script>
+</body>
+
+</html>

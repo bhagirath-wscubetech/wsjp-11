@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #main {
+            width: 1000px;
+            margin: 10px 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="count">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <div id="main">
+        <div class="box"></div>
+    </div>
+    <script>
+        var main = document.querySelector("#main");
+        var count = document.querySelector("#count");
+        count.addEventListener(
+            "change",
+            function () {
+                main.innerHTML = "";
+                var num = count.value;
+                for (var i = 1; i <= num; i++) {
+                    var box = document.createElement("div");
+                    box.classList.add("box");
+                    main.append(box);
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>
