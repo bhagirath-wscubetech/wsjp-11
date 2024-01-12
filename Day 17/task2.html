@@ -2,57 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
         .parent {
             width: 400px;
             height: 400px;
-            margin: 50px auto;
             box-shadow: 0px 0px 2px grey;
+            margin: 100px auto;
             position: relative;
-            overflow: hidden;
-        }
-
-        .parent img {
-            width: 100%;
-            height: 100%;
         }
 
         .overlay {
-            transition: 1s;
             width: 100%;
             height: 100%;
             position: absolute;
+            top: 0;
             left: 0;
-        }
-
-        .white {
-            top: 100%;
-            background-color: rgba(255, 255, 255, 0.3);
+            transition: 0.4s;
+            transform: scaleX(0);
         }
 
         .black {
-            bottom: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.6);
+            transform-origin: left;
         }
 
-        .parent:hover .white {
-            top: 0%;
+        .white {
+            background-color: rgba(255, 255, 255, 0.6);
+            transition-delay: 0.2s;
+            transform-origin: right;
         }
 
-        .parent:hover .black {
-            bottom: 0%;
+        .parent:hover .overlay {
+            transform: scaleX(1);
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
     <div class="parent">
-        <img src="https://www.jcrcab.com/wp-content/uploads/2017/12/u.jpg" alt="">
-        <div class="overlay black"></div>
+        <img src="https://www.bagteshfashion.com/public/storage/uploads/images/homepage/nehru-jacket.jpg" alt=""
+            width="100%" height="100%">
         <div class="overlay white"></div>
+        <div class="overlay black"></div>
     </div>
 </body>
 

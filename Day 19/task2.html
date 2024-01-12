@@ -2,35 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
     <style>
-        .parent {
+        .loader {
             width: 400px;
             height: 400px;
-            background: linear-gradient(90deg, rgba(224,51,28,1) 9%, rgba(208,198,44,1) 37%, rgba(228,189,184,1) 71%, rgba(66,168,254,1) 97%);
-            text-align: center;
+            border: 5px red solid;
             margin: 100px auto;
-            transform-style: preserve-3d;
-            backface-visibility: hidden;
-            transition: 5s;
+            border-radius: 50%;
+            border-left-color: transparent;
+            animation: loader 2s infinite linear;
         }
-        h1{
-            backface-visibility: hidden;
-            transform: translateZ(100px);
-            text-shadow: 0px 0px 2px black;
-            font-size: 100px;
-            color: white;
-        }
-        .parent:hover{
-            transform: rotateY(180deg);
+
+        @keyframes loader {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="parent">
-        <h1>Hello</h1>
-    </div>
+    <div class="loader"></div>
 </body>
 
 </html>

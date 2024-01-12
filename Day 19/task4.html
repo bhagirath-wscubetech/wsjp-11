@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .parent {
+            width: 1000px;
+            margin: 200px auto;
+            border: 1px black solid;
+            display: flex;
+            justify-content: space-between;
+            font-size: 100px;
+        }
+
+        .parent h1 {
+            transform: rotateY(90deg);
+            filter: blur(10px);
+            animation: heading 5s forwards;
+        }
+
+        @keyframes heading {
+            from {
+                transform: rotateY(90deg);
+                filter: blur(10px);
+            }
+
+            to {
+                transform: rotateY(0deg);
+                filter: blur(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <h1>H</h1>
+        <h1 style="animation-delay: 1s;">E</h1>
+        <h1 style="animation-delay: 1.5s;">L</h1>
+        <h1 style="animation-delay: 2s;">L</h1>
+        <h1 style="animation-delay: 2.5s;">O</h1>
+    </div>
+</body>
+
+</html>

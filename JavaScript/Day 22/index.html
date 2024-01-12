@@ -6,123 +6,112 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: verdana;
+            font-family: Verdana;
             box-sizing: border-box;
         }
 
-        .main {
-            width: 1200px;
+        .parent {
+            max-width: 1000px;
             margin: auto;
             display: flex;
-            align-items: stretch;
+            gap: 10px;
         }
 
-        .input {
-            width: 50%;
-            border: 1px black solid;
+        button {
+            min-width: 50px;
         }
 
-        #output {
+        .box {
             width: 50%;
+            height: 600px;
             border: 1px red solid;
-            padding: 20px 40px;
-            background-size: cover;
+            padding: 40px 10px;
         }
 
-        .input {
-            padding: 40px;
-            gap: 40px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .input * {
-            font-size: 20px;
+        .inp {
+            width: 100%;
             padding: 10px;
+            font-size: 20px;
+            margin: 10px 0;
         }
 
-        #output .output-box:nth-child(1) {
-            margin: 50px 0;
-        }
-
-        #output .output-box:nth-child(2) {
-            height: 350px;
-        }
-
-        #output .output-box:nth-child(3) {
-            text-align: right;
+        .output {
             margin: 20px 0;
-        }
-
-        .font-box button {
-            padding: 5px;
-            margin-top: 10px;
-            min-width: 30px;
-            font-size: 30px;
         }
     </style>
 </head>
 
 <body>
-    <div class="main">
-        <div class="input">
-            <input onkeyup="getData(0)" type="text" placeholder="To" class="input-box">
-            <textarea onkeyup="getData(1)" cols="30" placeholder="Message" class="input-box" rows="10"></textarea>
-            <input onkeyup="getData(2)" type="text" placeholder="From" class="input-box">
-            <input onkeyup="getData(3)" type="text" placeholder="From" class="input-box">
+    <div class="parent">
+        <div class="box">
+            <input type="text" class="inp" placeholder="To" onkeyup="getData(0)">
+
+            <textarea name="" id="" class="inp" cols="30" rows="10" placeholder="Message"
+                onkeyup="getData(1)"></textarea>
+
+            <input type="text" class="inp" placeholder="From" onkeyup="getData(2)">
         </div>
-        <div id="output">
-            <h3 class="output-box">To: </h3>
-            <p class="output-box"></p>
-            <h3 class="output-box">From:</h3>
-            <h3 class="output-box">From:</h3>
-        </div>
-    </div>
-    <div class="main">
-        <div class="font-box">
-            <button onclick="toggleFont(true)">+</button>
-            <button onclick="toggleFont(false)">-</button>
-            <button onclick="reset()">Reset</button>
-            <input type="color" value="#FFFFFF" onchange="setColor(this.value)">
-            <img src="https://picsum.photos/id/237/200/300" alt="" width="50" onclick="setImg(this.src)">
-            <img src="https://picsum.photos/id/238/200/300" alt="" width="50" onclick="setImg(this.src)">
-            <img src="https://picsum.photos/id/239/200/300" alt="" width="50" onclick="setImg(this.src)">
-            <img src="https://picsum.photos/id/240/200/300" alt="" width="50" onclick="setImg(this.src)">
-            <img src="https://picsum.photos/id/241/200/300" alt="" width="50" onclick="setImg(this.src)">
-            <img src="https://picsum.photos/id/242/200/300" alt="" width="50" onclick="setImg(this.src)">
+        <div class="box" id="output_container">
+            <h3 class="output">To:</h3>
+            <p class="output">Message</p>
+            <h3 class="output">From</h3>
         </div>
     </div>
+    <div class="parent">
+        BG Color: <input type="color" onchange="changeColor(this.value)">
+        <img src="img/c1.jpg" alt="" width="50" onclick="changeImg(this.src)">
+        <img src="img/c2.jpg" alt="" width="50" onclick="changeImg(this.src)">
+        <img src="img/c3.jpg" alt="" width="50" onclick="changeImg(this.src)">
+        <img src="img/c4.jpg" alt="" width="50" onclick="changeImg(this.src)">
+        Text Color: <input type="color" onchange="changeTextColor(this.value)">
+        <button onclick="reset()">Reset</button>
+
+        <button onclick="changeFontSize(0)">-</button>
+        <button onclick="changeFontSize(1)">+</button>
+    </div>
+
     <script>
-        var inputBox = document.getElementsByClassName("input-box");
-        var outputBox = document.getElementsByClassName("output-box");
-        var output = document.getElementById("output");
-        var fontSize = 16;
+        var inps = document.getElementsByClassName("inp");
+        var outputs = document.getElementsByClassName("output");
+        var output_container = document.getElementById("output_container");
+        var font = 16;
 
-        function reset() {
-            fontSize = 16;
-            output.style.fontSize = fontSize + "px";
-        }
-        function setImg(src) {
-            output.style.backgroundImage = `url(${src})`;
+        function changeTextColor(codeCode) {
+            output_container.style.color = codeCode;
         }
 
-        function setColor(colorCode) {
-            output.style.backgroundImage = "";
-            output.style.backgroundColor = colorCode;
-        }
-
-        function toggleFont(flag) {
-            if (flag == true) {
-                fontSize += 2;
+        function changeFontSize(flag) {
+            if (flag == 1) {
+                if (font == 30) return;
+                font++
             } else {
-                fontSize -= 2;
+                if (font == 16) return;
+                font--;
             }
-            output.style.fontSize = fontSize + "px";
+            output_container.style.fontSize = font + "px";
+        }
+
+        function changeColor(codeCode) {
+            // console.log(codeCode);
+            output_container.style.backgroundColor = codeCode;
+            output_container.style.backgroundImage = "";
+        }
+
+        function changeImg(imgName) {
+            output_container.style.backgroundImage = `url(${imgName})`;
+            output_container.style.backgroundSize = "cover";
         }
 
         function getData(index) {
-            outputBox[index].innerText = inputBox[index].value;
+            outputs[index].innerText = inps[index].value;
+            // outputs[0].innerText = inps[0].value;
+            // outputs[1].innerText = inps[1].value;
         }
+
+        function reset() {
+            output_container.style = "";
+        }
+
     </script>
 </body>
 

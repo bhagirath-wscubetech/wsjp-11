@@ -3,23 +3,17 @@
 
 <head>
     <title>Document</title>
-    <style>
-        .box {
-            width: 400px;
-            height: 400px;
-            border: 1px red solid;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="box"></div>
-    <button onclick="document.write('<h1 style=color:red>Hello from inline</h1>')">Click</button>
-
-    <script src="js/app.js"></script>
+    <button onmouseenter="console.log('Hello!')">Click Me</button> <br>
     <script>
-        document.write('Hello from internal')
+        // alert('Hello from internal js');
+        console.log('Hello console from internal'); // imp 
+        document.write("Hello document from internal");
     </script>
+    <script src="js/app.js"></script>
+
 </body>
 
 </html>

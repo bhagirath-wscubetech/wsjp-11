@@ -5,73 +5,57 @@
     <style>
         .parent {
             width: 1000px;
-            height: 400px;
+            height: 300px;
+            border: 2px black solid;
             margin: auto;
             display: flex;
             justify-content: space-between;
         }
 
         .box {
-            width: 300px;
-            font-size: 100px;
+            width: 200px;
+            height: 100%;
+            border: 2px red solid;
             text-align: center;
-            height: 300px;
-            border: 2px black solid;
-        }
-
-        .tray {
-            width: 1000px;
-            margin: auto;
-            text-align: center;
-            font-size: 60px;
-        }
-
-        button {
-            font-size: inherit;
         }
     </style>
-    <title>Document</title>
 </head>
 
 <body>
     <div class="parent">
         <div class="box" id="box1">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="">
+           <img src="https://picsum.photos/id/237/200/300" width="100%" height="100%" alt="">
         </div>
+        <button onclick="first()">Next</button>
+        <button onclick="third()">Prev - 3</button>
         <div class="box" id="box2"></div>
+        <button onclick="second()">Next</button>
+        <button onclick="fourth()">Prev - 4</button>
         <div class="box" id="box3"></div>
     </div>
-    <div class="tray">
-        <button onclick="forward()"> Forward </button>
-        <button onclick="backward()"> Backward </button>
-    </div>
     <script>
-        var current = 1;
-        function forward() {
-            if (current == 1) {
-                box2.innerHTML = box1.innerHTML;
-                box1.innerHTML = "";
-                current++;
-            } else if (current == 2) {
-                box3.innerHTML = box2.innerHTML;
-                box2.innerHTML = "";
-                current++;
-            } else if (current == 3) {
-                box1.innerHTML = box3.innerHTML;
-                box3.innerHTML = ""
-                current = 1;
-            }
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+
+        function first() {
+            box2.innerHTML = box1.innerHTML;
+            box1.innerHTML = "";
         }
-        function backward() {
-            if (current == 3) {
-                box2.innerHTML = box3.innerHTML;
-                box3.innerHTML = "";
-                current--;
-            } else if (current == 2) {
-                box1.innerHTML = box2.innerHTML;
-                box2.innerHTML = "";
-                current--;
-            }
+        function second() {
+            box3.innerHTML = box2.innerHTML;
+            box2.innerHTML = "";
+        }
+
+        function third() {
+            box1.innerHTML = box2.innerHTML;
+            box2.innerHTML = "";
+        }
+
+        function fourth() {
+            box2.innerHTML = box3.innerHTML;
+            box3.innerHTML = "";
+
         }
 
     </script>

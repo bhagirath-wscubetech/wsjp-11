@@ -2,35 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        .box {
-            width: 400px;
-            height: 400px;
-            background: rgb(255, 0, 255);
-            margin: 50px auto;
-            transition: 1s;
-            /* mouse leave */
-            border: 0px black solid;            
+        .parent {
+            width: 1000px;
+            height: 500px;
+            border: 1px black solid;
         }
-        .box:hover {
-            transition: 4s;
-            /* mouse enter */
-            width: 600px;
-            height: 600px;
-            background: rgb(188,143,143);
-            border: 5px black solid;
-            color: white;
-            font-size: 100px;
+
+        .box1 {
+            color: firebrick;
+            width: 436px;
+            /* 500 - 2 - 2 = 496 - 60 = 436*/
+            height: 436px;
+            border: 2px red solid;
+            float: left;
+            padding: 30px;
+        }
+
+        .box2 {
+            width: 456px;
+            /* 496 - 40 */
+            height: 476px;
+            /* 496 - 20 */
+            border: 2px blue solid;
+            float: left;
+            padding: 10px 20px;
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="box">
-        Hello
+    <div class="parent">
+        <div class="box1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, consequatur iste! Reiciendis, necessitatibus
+            neque rem, corrupti ipsa quis repellendus molestiae modi ab voluptas ea explicabo aspernatur natus esse quo
+            quia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae nobis dicta esse quo nesciunt
+            quos perferendis magni iste tempore maxime, at fuga earum labore rerum consequatur nostrum qui sunt ab!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, vitae tempore perferendis alias nulla
+            est quibusdam ipsum esse aspernatur quidem earum unde, ullam reprehenderit optio soluta ad ratione sunt
+            accusantium?
+        </div>
+        <div class="box2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quam cumque, reiciendis nesciunt laudantium
+            voluptates dicta tempore saepe eligendi odio dolor praesentium, in ex optio vel ullam ea laborum autem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti animi facilis, consectetur
+            voluptates consequatur laboriosam adipisci pariatur nostrum voluptatum fuga quam consequuntur nihil veniam
+            cumque aut, mollitia, vitae voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae amet
+            a quam ex nobis, culpa sequi nemo impedit omnis voluptatem labore enim officiis, voluptatum tenetur ullam
+            aperiam hic nihil repudiandae.
+        </div>
     </div>
 </body>
 

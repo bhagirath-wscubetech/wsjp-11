@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100%;
+            height: 500px;
+            background-color: #FF9A8B;
+            position: relative;
+            background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+        }
+
+        .box::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background: rgba(0,0,0,0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* .box::after {
+            content: "I am after";
+            position: absolute;
+            background: yellow;
+            padding: 20px;
+            right: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Hello Everyone</h1>
+    </div>
+</body>
+
+</html>

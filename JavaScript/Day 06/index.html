@@ -1,31 +1,40 @@
 <script>
-    var units = 900;
-    // 0 - 200 - 2.5
-    // 200 - 400 - 3
-    // 400 - 600 - 3.5
-    // 600 - 800 - 
-
-    var num = parseInt(units / 200);
-    var rem = units % 200;
-    console.log(num);
-    console.log(rem);
-
-    if (num == 1) {
-        var total = (200 * 2.5) + (rem * 3.0)
-    } else if (num == 2) {
-        var total = (200 * 2.5) + (200 * 3.0)
-            + (rem * 3.5)
-    } else if (num == 3) {
-        var total = (200 * 2.5) + (200 * 3.0)
-            + (200 * 3.5) + (rem * 4.0)
-    } else if (num == 4) {
-        console.log(rem);
-        var total = (200 * 2.5) + (200 * 3.0)
-            + (200 * 3.5) + (rem * 4.5);
-    } else {
-        var total = (rem * 2.5)
+    // reverse counting
+    for (var i = 1; i <= 50; i++) {
+        if (i % 2 == 0) {
+            console.log(i);
+        }
     }
 
-    console.log(total);
+    // for (var i = 10; i > 0; i--) {
+    //     if (i % 2 != 0) {
+    //         console.log(i);
+    //     }
+    // }
 
+
+    // for (var i = 1; i < 11; i++) {
+    //     console.log(i * 2);
+    // }
+
+
+    // if(1%2 == 0){
+    //     console.log('even')
+    // }else{
+    //     console.log('odd')
+    // }
+    // if(2%2 == 0){
+
+    // }
+    // for (var i = 1; i <= 5; i++) {
+    //     if (i % 2 == 0) {
+    //         console.log(i, 'even');
+    //     } else {
+    //         console.log(i, 'odd');
+    //     }
+    // }
+    // for (var i = 1; i <= 10; i++) {
+    //     console.log('kuch bhi');
+    // }
+    // console.log("end");
 </script>

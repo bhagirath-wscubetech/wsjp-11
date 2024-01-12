@@ -6,66 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .parent {
-            width: 1000px;
-            height: 400px;
+        .heading:hover {
+            color: firebrick;
+            font-size: 150px;
+            text-align: right;
+        }
+
+        .heading {
+            transition: 2s;
+            font-style: italic;
+            font-weight: bold;
+            font-family: Calibri;
+            font-size: 100px;
             border: 1px red solid;
-            margin: 40px auto;
-            transition: 1s;
+            text-align: center;
         }
 
-        .box1 {
-            margin: 50px;
-            width: 200px;
-            height: 200px;
-            float: left;
-            background: black;
-            transition: 1s;
+        p {
+            transition: 5s;
+            font-size: 16px;
+            width: 1000px;
+            padding: 30px;
+            border: 1px black solid;
+            margin: auto;
+            text-align: justify;
+            font-family: Calibri;
         }
 
-        .box2 {
-            margin: 50px;
-            width: 200px;
-            height: 200px;
-            float: left;
-            background: black;
-            transition: 1s;
-        }
-
-        .box3 {
-            margin: 50px;
-            width: 200px;
-            height: 200px;
-            float: left;
-            background: black;
-            transition: 1s;
-        }
-
-        .parent:hover {
-            background: yellow;
-        }
-
-        .parent:hover .box1 {
-            background: rebeccapurple;
-        }
-
-        .parent:hover .box2 {
-            background: gold;
-        }
-
-        .parent:hover .box3 {
-            background: darkgreen;
+        p:hover {
+            border-color: goldenrod;
+            border-width: 10px;
+            width: 1200px;
+            font-family: Arial;
         }
     </style>
 </head>
 
 <body>
-    <div class="parent">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-    </div>
-
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non rem, mollitia dolores facilis laborum enim
+        architecto deleniti, veritatis adipisci sapiente maiores quia quo numquam vero temporibus nam facere. Nesciunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non rem, mollitia dolores facilis laborum enim
+        architecto deleniti, veritatis adipisci sapiente maiores quia quo numquam vero temporibus nam facere. Nesciunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non rem, mollitia dolores facilis laborum enim
+        architecto deleniti, veritatis adipisci sapiente maiores quia quo numquam vero temporibus nam facere. Nesciunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non rem, mollitia dolores facilis laborum enim
+        architecto deleniti, veritatis adipisci sapiente maiores quia quo numquam vero temporibus nam facere. Nesciunt?
+    </p>
+    <h1 class="heading">
+        Hello
+    </h1>
 </body>
 
 </html>

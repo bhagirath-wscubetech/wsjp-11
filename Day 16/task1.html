@@ -2,33 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
         .parent {
             width: 1000px;
             height: 500px;
             border: 1px black solid;
-            margin: auto;
-            position: relative;
         }
 
         .box {
-            transition: 5s;
             width: 100px;
             height: 100px;
+            transition: 1s;
             background: red;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
 
         .parent:hover .box {
-            top: 150px;
-            left: 350px;
+            transform: translate(900px, 400px) rotateY(360deg);
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>

@@ -1,0 +1,29 @@
+@media (min-width:768px) {
+    .banner-containt h1{
+        font-size: 60px;
+    } 
+}
+
+@media (min-width:992px) {
+    .top-tray {
+        display: flex;
+    }
+    #hamburger{
+        display: none;
+    }
+    #menu{
+        position: unset;
+        flex-direction: row;
+        width: unset;
+        height: unset;
+        color: #222;
+        background-color:unset;
+        padding: unset !important;
+        font-weight: unset;
+        justify-content: flex-end;
+    }
+    .banner-containt h1{
+        font-size: 72px;
+    }   
+}
+

@@ -1,62 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    setInterval(
+        function () {
+            var d = new Date();
+            console.clear();
+            console.log(d.getSeconds());
+        },
+        1000
+    )
 
-<head>
-    <style>
-        .main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
-    <title>Document</title>
-</head>
 
-<body>
-    <div class="main">
-        <h1>0</h1>
-        <button id="start">Start</button>
-        <button id="end">Stop</button>
-        <button id="reset">Reset</button>
-    </div>
-    <script>
-        var start = document.querySelector("#start");
-        var end = document.querySelector("#end");
-        var reset = document.querySelector("#reset");
-        var res = document.querySelector("h1");
-        var count = 0;
-        var intervalHolder; // global
+    // var today = new Date();
 
-        start.addEventListener(
-            "click",
-            function () {
-                start.disabled = true;
-                intervalHolder = setInterval(
-                    function () {
-                        count++;
-                        res.innerText = count;
-                        if (count == 20) stop();
-                    },
-                    1000
-                )
-            }
-        )
-        reset.addEventListener(
-            "click",
-            function () {
-                stop();
-                count = 0;
-                res.innerText = 0;
-            }
-        )
-        end.addEventListener("click", stop)
+    // var dob = new Date("05 Nov 2002");
 
-        function stop() {
-            start.disabled = false;
-            clearInterval(intervalHolder);
-        }
-    </script>
-</body>
+    // var age = today.getTime() - dob.getTime();
+    // var year = age / 1000 / 60 / 60 / 24 / 365;
 
-</html>
+    // console.log(year);
+    // console.log(parseInt(year));
+
+    // var month = year - parseInt(year);
+    // console.log(parseInt(month * 12));
+    // ms to year
+</script>

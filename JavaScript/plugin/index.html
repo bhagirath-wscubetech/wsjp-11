@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            font-family: 'Geneva', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 18px;
+        }
+
+        .carousel {
+            width: 628.57px;
+            height: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        #carousel {
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        #wrapper {
+            width: 2514.28px;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            transition: transform .5s ease-in-out;
+        }
+
+        .carouselContent {
+            float: left;
+            width: 628.57px;
+            height: 300px;
+            /*height: auto;*/
+            background-position: center top;
+            white-space: normal;
+            background-repeat: no-repeat;
+        }
+
+        #carouselItem1 {
+            background-color: #ADFF2F;
+            background-image: url("#");
+        }
+
+        #carouselItem2 {
+            background-color: #FF7F50;
+            background-image: url("#");
+        }
+
+        #carouselItem3 {
+            background-color: #000000;
+            background-image: url("#");
+        }
+
+        #carouselItem4 {
+            background-color: #DC143C;
+            background-image: url("#");
+        }
+
+        #navLinks {
+            text-align: center;
+            width: 550px;
+        }
+
+        #navLinks ul {
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        #navLinks ul li {
+            float: left;
+            text-align: center;
+            margin: 10px;
+            list-style: none;
+            cursor: pointer;
+            background-color: #f5f3f5;
+            padding: 5px;
+            border-radius: 50%;
+            border: #000 1px solid;
+        }
+
+        #navLinks ul li:hover {
+            background-color: #fe9898;
+        }
+
+        #navLinks ul li.active {
+            background-color: #000;
+            color: #FFFFFF;
+            outline-width: 7px;
+        }
+
+        #navLinks ul li.active:hover {
+            background-color: #d3d3d3;
+            color: #FFFFFF;
+        }
+
+        .imageLinks {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            transform: translate(0%, -50%);
+            position: absolute;
+            top: 70%;
+            padding: .75rem .5rem .75rem 0.5rem;
+            border-radius: 1px;
+            text-transform: uppercase;
+        }
+
+        .myclass {
+            text-align: center;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div style="display: flex;">
+            Number of Projects <div class="value" akhi="6000">0</div>
+        </div>
+        <div class="value" akhi="1500">0</div>
+        <div class="value" akhi="7000">0</div>
+        <div class="value" akhi="999">0</div>
+    </div>
+    <div class="container">
+        <section id="carousel">
+            <div class="carousel">
+                <div id="wrapper">
+                    <div id="carouselItem1" class="carouselContent"><a class="imageLinks" href="http://google.com">Slide
+                            1</a></div>
+                    <div id="carouselItem2" class="carouselContent"><a class="imageLinks" href="http://reddit.com">slide
+                            2</a></div>
+                    <div id="carouselItem3" class="carouselContent"><a class="imageLinks"
+                            href="http://facebook.com">slide 3</a></div>
+                    <div id="carouselItem4" class="carouselContent"><a class="imageLinks"
+                            href="http://linkedin.com">slide 4</a></div>
+                </div>
+            </div>
+            <div id="navLinks">
+                <ul>
+                    <li class="itemLinks" data-pos="0px"></li>
+                    <li class="itemLinks" data-pos="-628.57px"></li>
+                    <li class="itemLinks" data-pos="-1257.14px"></li>
+                    <li class="itemLinks" data-pos="-1885.71px"></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var links = document.querySelectorAll(".itemLinks");
+        var wrapper = document.querySelector("#wrapper");
+
+        // the activeLink provides a pointer to the currently displayed item
+        var activeLink = 0;
+
+        // setup the event listeners
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener('click', setClickedItem, false);
+
+            // identify the item for the activeLink
+            link.itemID = i;
+        }
+
+        // set first item as active
+        links[activeLink].classList.add("active");
+
+        function setClickedItem(e) {
+            removeActiveLinks();
+            resetTimer();
+
+            var clickedLink = e.target;
+            activeLink = clickedLink.itemID;
+
+            changePosition(clickedLink);
+        }
+
+        function removeActiveLinks() {
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+        }
+
+        // Handle changing the slider position as well as ensure
+        // the correct link is highlighted as being active
+        function changePosition(link) {
+            var position = link.getAttribute("data-pos");
+
+            var translateValue = "translate3d(" + position + ", 0px, 0)";
+            wrapper.style.transform = translateValue;
+
+            link.classList.add("active");
+        }
+
+        // sliding the content automatically
+        //
+        var timeoutID;
+
+        function startTimer() {
+            // wait 2 seconds before calling goInactive
+            timeoutID = window.setInterval(goToNextItem, 5000);
+        }
+        startTimer();
+
+        function resetTimer() {
+            window.clearInterval(timeoutID);
+            startTimer();
+        }
+
+        function goToNextItem() {
+            removeActiveLinks();
+
+            if (activeLink < links.length - 1) {
+                activeLink++;
+            } else {
+                activeLink = 0;
+            }
+
+            var newLink = links[activeLink];
+            changePosition(newLink);
+        }
+    </script>
+
+    <script>
+        const counters = document.querySelectorAll('.value');
+        const speed = 2000;
+
+        counters.forEach(counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('akhi');
+                const data = +counter.innerText;
+
+                const time = value / speed;
+                if (data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 1);
+                } else {
+                    counter.innerText = value;
+                }
+
+            }
+
+            animate();
+        });
+
+
+
+    </script>
+</body>
+
+</html>

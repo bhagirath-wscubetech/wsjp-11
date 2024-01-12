@@ -1,44 +1,76 @@
 <script>
-    // function add(a, b) {
-    //     console.log('Hii');
-    //     return a + b;
-    //     // last statement of the function
-    //     console.log('Hello');
+    var names = ['Jenny', 'John', 'Ramesh'];
+    console.log(names);
+
+    names.push("Ashok");
+    console.log(names);
+
+    names.push("Riya");
+    console.log(names);
+
+    names.pop();
+    console.log(names);
+
+    names.pop();
+    console.log(names);
+
+    // function checkPrime(num) {
+    //     var isPrime = true;
+    //     for (var i = 2; i < num; i++) {
+    //         if (num % i == 0) {
+    //             isPrime = false;
+    //             break;
+    //         }
+    //     }
+    //     console.log(isPrime);
     // }
 
-    // var c = add(2, 3);
-    // var d = add(c, 20);
-    // var f = add(c, d);
-    // console.log(f);
+    // checkPrime(30);
+    // checkPrime(3);
+    // checkPrime(32);
 
-    function add(a, b, opr) {
-        if (opr == "+") {
-            return a + b;
-        } else if (opr == "-") {
-            return a - b;
-        } else if (opr == "x") {
-            return a * b;
-        } else if (opr == "/") {
-            return a / b;
-        } else {
-            console.error("Please sahi operator chune");
-        }
-    }
 
-    var res1 = add(2, 3, "+");
-    var res2 = add(20, 10, "-");
-    var res3 = add(100, 200, "x");
-    var res4 = add(1, 2, "/")
-    // add(2, 2, "Hello");
-
-    // function greet(uname) {
-    //     console.log('Hello ' + uname + ' Welcome');
+    // function findEven(start, end) {
+    //     for (var i = start; i <= end; i++) {
+    //         if (i % 2 == 0) {
+    //             console.log(i);
+    //         }
+    //     }
     // }
 
-    // greet('John'); //call
-    // greet('Jenny'); //call
-    // greet('Nikita'); //call
-    // greet("Rohit");
-    // greet();
+    // findEven(10, 50);
 
+
+    // function sum(arr) {
+    //     var total = 0;
+    //     for (var i = 0; i < arr.length; i++) {
+    //         total += arr[i];
+    //     }
+    //     return total;
+    // }
+
+    // var nums = [3, 6, 7, 1, 30, 60, 40, 23];
+    // var res1 = sum(nums);
+    // console.log(res1);
+
+    // var nums2 = [500, 600, 100, 700];
+    // var res2 = sum(nums2);
+    // console.log(res2);
+
+    // function series(start, end) {
+    //     for (var i = start; i <= end; i++) {
+    //         console.log(i);
+    //     }
+    // }
+    // series(10, 15);
+
+    // function table(num) {
+    //     for (var i = 1; i <= 10; i++) {
+    //         console.log(i * num);
+    //     }
+    // }
+
+    // table(5);
+    // table(10);
+    // table(20);
 </script>

@@ -3,54 +3,37 @@
 
 <head>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        .outer {
-            width: 300px;
-            height: 10px;
-            margin: 5px 0;
-            box-shadow: 0px 0px 1px grey;
-            overflow: hidden;
-            border-radius: 50px;
-        }
-
-        #inner {
-            width: 0%;
-            height: 100%;
-            transition: 1s;
+        input,
+        h1,
+        select,
+        button {
+            font-size: 40px;
         }
     </style>
 </head>
 
 <body>
-    <input type="text" onkeyup="getData(this.value)">
-    <div class="outer">
-        <div id="inner"></div>
-    </div>
-
+    <input type="password" id="passBox">
+    <button id="btn" onclick="togglePass()">
+        <i class="fa-solid fa-eye"></i>
+    </button>
+    <script src="https://kit.fontawesome.com/959eda728d.js" crossorigin="anonymous"></script>
     <script>
-        var innerBox = document.getElementById("inner");
-        function getData(data) {
-            if (data.length > 0 && data.length <= 5) {
-                innerBox.style.width = "40%";
-                innerBox.style.backgroundColor = "red";
-            } else if (data.length > 5 && data.length <= 10) {
-                innerBox.style.width = "60%";
-                innerBox.style.backgroundColor = "orange";
-            } else if (data.length > 10) {
-                innerBox.style.width = "100%";
-                innerBox.style.backgroundColor = "lightgreen";
+        var passBox = document.getElementById("passBox");
+        var btn = document.getElementById("btn");
+
+        function togglePass() {
+            if (passBox.type == "password") {
+                passBox.type = "text";
+                btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`;
             } else {
-                innerBox.style.width = "";
-                innerBox.style.backgroundColor = "";
+                passBox.type = "password";
+                btn.innerHTML = `<i class="fa-solid fa-eye"></i>`;
             }
         }
+
     </script>
+
 </body>
 
 </html>

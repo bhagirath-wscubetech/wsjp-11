@@ -2,39 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        .parent {
-            width: 1200px;
-            height: 500px;
-            border: 2px red solid;
+        .form {
+            width: 1000px;
+            border: 1px red solid;
+            margin: auto;
         }
 
-        .box {
-            width: 400px;
-            /* 400 - 8 - 20 = 392 - 20 = 372 */
-            height: 500px;
-            /* 500 - 8 - 20 = 492 */
-            box-sizing: border-box;
-            /* 
-                content-box
-                border-box (auto -> border and padding)
-            */
-            border: 4px black solid;
-            padding: 10px;
-            float: left;
+        .row {
+            padding: 20px;
+        }
+
+        label,
+        input,
+        textarea,
+        select {
+            font-size: 30px;
         }
     </style>
 </head>
 
 <body>
-    <div class="parent">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </div>
+    <form class="form">
+
+        <div class="row">
+            <label for="">Color</label>
+            <input type="color">
+        </div>
+        <div class="row">
+            <label for="">Age</label>
+            <input type="number" max="35" min="18">
+        </div>
+        <div class="row">
+            <label>File</label>
+            <input type="file">
+        </div>
+        <div class="row">
+            <label for="name">Name</label>
+            <input id="name" type="text" required name="user_name" maxlength="20">
+        </div>
+        <div class="row">
+            <label>Email</label>
+            <input type="email" name="user_email" required>
+        </div>
+        <div class="row">
+            <label for="">Password</label>
+            <input type="password" name="user_password">
+        </div>
+        <div class="row">
+            <label for="">Address</label>
+            <textarea name="user_address"></textarea>
+        </div>
+        <div class="row">
+            <label>Gender</label> <br>
+            <label>Male</label> <input type="radio" name="gender" value="M" checked>
+            <label>Female</label> <input type="radio" name="gender" value="F">
+            <label>Other</label> <input type="radio" name="gender" value="O">
+        </div>
+        <div class="row">
+            <label>Food</label> <br>
+            <input id="f1" type="checkbox" name="food" value="F1" checked> <label for="f1">Food1</label>
+            <input id="f2" type="checkbox" name="food" value="F2"> <label for="f2">Food2</label>
+            <input id="f3" type="checkbox" name="food" value="F3" checked> <label for="f3">Food3</label>
+        </div>
+        <div class="row">
+            <label for="">Country</label>
+            <select name="country">
+                <option value="+91">India</option>
+                <option value="+01" selected>America</option>
+                <option value="+90">China</option>
+                <option value="+93">Russia</option>
+                <option value="+95">Sri Lanka</option>
+            </select>
+        </div>
+        <div class="row">
+
+            40
+            <input type="range" min="0" max="400" value="150">
+            400
+            <br>
+            <input type="datetime-local">
+            <input type="date">
+            <input type="time">
+            <input type="month">
+            <input type="week">
+        </div>
+        <div class="row">
+            <input type="submit" value="Order Now">
+            <input type="reset" value="Hatta do">
+        </div>
+    </form>
 </body>
 
 </html>

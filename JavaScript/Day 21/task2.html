@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body{
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body id="mainImg">
+    <!-- <div>
+        <img src="" id="mainImg" style="width: 500px; height: 500px;">
+    </div> -->
+    <img src="img/c1.jpg" alt="" onmouseenter="getSrc(this)">
+    <img src="img/c2.jpg" alt="" onmouseenter="getSrc(this)">
+    <img src="img/c3.jpg" alt="" onmouseenter="getSrc(this)">
+    <img src="img/c4.jpg" alt="" onmouseenter="getSrc(this)">
+
+    <script>
+        var mainImg = document.getElementById("mainImg");
+        function getSrc(imageTag) {
+            // console.log(imageTag.src);
+            mainImg.style.backgroundImage = `url(${imageTag.src})`;
+            // mainImg.style.backgroundImage = `url(${imageTag.src})`;
+        }
+    </script>
+</body>
+
+</html>

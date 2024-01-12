@@ -1,8 +1,33 @@
 <script>
-    for (var i = 2; i <= 5; i++) {
-        for (var j = i; j <= (i * 3 - 1); j++) {
-            document.write(j, " ");
+    var comm = [120, 500, 750, 1000, 300, 750, 200, 180, 1500];
+
+    var sum = 0;
+    for (var i = 0; i < comm.length; i++) {
+        if (comm[i] % 100 == 0) {
+            sum += comm[i];
         }
-        document.write("<br>")
+        // if (comm[i] % 100 != 0) continue;
+
+        // sum += comm[i];
     }
+    console.log(sum);
+
+    // var sum = 0;
+    // for (var i = 0; i < comm.length; i++) {
+    //     if (sum >= 2300) {
+    //         break;
+    //     }
+    //     sum += comm[i];
+    // }
+
+    // console.log(sum);
+
+
+    // var sum = 0;
+    // for (var i = 0; i < comm.length; i++) {
+    //     if (comm[i] >= 300 && comm[i] <= 800) {
+    //         sum += comm[i];
+    //     }
+    // }
+    // console.log(sum);
 </script>

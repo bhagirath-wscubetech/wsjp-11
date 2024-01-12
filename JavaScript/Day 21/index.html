@@ -3,32 +3,30 @@
 
 <head>
     <style>
-
+        #box {
+            width: 500px;
+            height: 500px;
+            border: 2px black solid;
+            transition: 1s;
+        }
     </style>
 </head>
 
 <body>
-    <input id="pass" type="password">
-    <button onclick="togglePass(this)">
-        Show Password
-    </button>
+    <div id="box" onmouseenter="addColor()" onmouseleave="removeColor()"></div>
     <script>
-        var passBox = document.getElementById("pass");
-
-        function togglePass() {
-            if (passBox.type == "password") {
-
-                passBox.type = "text";
-                // btn.innerText = "Hide Password";
-                passBox.style.color = "red";
-
-            } else {
-
-                passBox.type = "password";
-                // btn.innerText = "Show Password";
-                passBox.style.color = "";
-
-            }
+        var box = document.getElementById("box");
+        function addColor() {
+            box.style.backgroundColor = "red";
+            box.style.borderRadius = "50%";
+            // text-aling -> textAling
+            // background-color -> backgroundColor
+            // font-size -> fontSize
+            // color -> color
+        }
+        function removeColor() {
+            box.style.backgroundColor = "";
+            box.style.borderRadius = "";
         }
     </script>
 </body>

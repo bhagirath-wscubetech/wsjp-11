@@ -3,30 +3,174 @@
 
 <head>
     <style>
-        .parent {
-            width: 1000px;
-            height: 300px;
-            border: 2px black solid;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .bg-danger {
-            background-color: red;
+        .parent {
+            max-width: 1200px;
+            padding: 0 10px;
+            margin: auto;
+        }
+
+        .parent h1 {
+            box-shadow: 0px 2px 2px grey;
+            padding: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .parent h1 span {
+            transition: 1s;
+        }
+
+        .paras {
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+            transform: scaleY(0);
+            padding: 10px;
+            height: 0;
+            transform-origin: top;
+            transition: 0.7s;
+            overflow: hidden;
+        }
+
+        .rotate {
+            transform: rotate(-180deg);
+        }
+
+        .open-para {
+            height: auto !important;
+            transform: scaleY(1) !important;
         }
     </style>
 </head>
 
 <body>
-    <!-- oncontextmenu = right click -->
-    <div class="parent" onclick="a()"></div>
+    <div class="parent">
+        <h1 onclick="openPara(this)">
+            Heading 1
+            <span>⬇️</span>
+        </h1>
+        <p class="paras">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+        </p>
+    </div>
+    <div class="parent">
+        <h1 onclick="openPara(this)">
+            Heading 1
+            <span>⬇️</span>
+        </h1>
+        <p class="paras">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+
+        </p>
+    </div>
+    <div class="parent">
+        <h1 onclick="openPara(this)">
+            Heading 1
+            <span>⬇️</span>
+        </h1>
+        <p class="paras">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+        </p>
+    </div>
+    <div class="parent">
+        <h1 onclick="openPara(this)">
+            Heading 1
+            <span>⬇️</span>
+        </h1>
+        <p class="paras">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet expedita vitae maxime cupiditate maiores
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+            dolorum in laborum, ab atque ratione sed voluptatem eaque, aliquid eligendi illo alias facilis! Assumenda.
+
+        </p>
+    </div>
     <script>
-        var parent = document.getElementsByClassName("parent")[0];
-        function a() {
-            // parent.classList.add("bg-danger");
-            parent.classList.toggle("bg-danger")
+        function openPara(elem) {
+            var openP = document.getElementsByClassName("open-para");
+            if(openP.length != 0) openP[0].classList.remove("open-para");
+            
+            var rotate = document.getElementsByClassName("rotate");
+            if(rotate.length != 0) rotate[0].classList.remove("rotate");
+
+            elem.nextElementSibling.classList.toggle("open-para");
+            elem.children[0].classList.toggle("rotate");
+
+            // parentNode
+            // prevElementSibling
+            // children // array
+            // paras[index].classList.toggle("open-para");
+            // paras[index].style.transform = "scaleY(1)";
+            // paras[index].style.height = "auto";
         }
-        // function b() {
-        //     parent.classList.remove("bg-danger");
-        // }
     </script>
 </body>
 

@@ -1,20 +1,36 @@
 <script>
-    var names = [
-        'Rohit',
-        'Alice',
-        'Bob',
-        'Charlie',
-        'David',
-        'Eva',
-        'Frank',
-        'Grace',
-        'Henry',
-        'Ivy',
-        'Jack'
-    ];
-    console.log(names);
+    function calc(a, b, opr) {
+        if (opr == "+") {
+            console.log(a + b);
+        } else if (opr == "-") {
+            console.log(a - b);
+        } else if (opr == "x") {
+            console.log(a * b);
+        } else if (opr == "/") {
+            console.log(a / b);
+        } else {
+            console.error("Invalid opr");
+        }
+    }
+    calc(4, 3, "+");
+    calc(14, 30, "x");
+    calc(1500, 30, "/");
+    calc(50, 30, "-");
+    calc(15, 20, "Raju");
 
-    names.splice(2,3);
-    console.log(names);
 
+    // function greet(name) {
+    //     console.log("Hello", name);
+    // }
+    // greet("Rahul");
+    // greet("Sonu");
+    // greet("Hitesh");
+
+    // function add(a, b) {
+    //     console.log(a - b);
+    // }
+    // add(3, 2);
+    // add(10, 3);
+    // add(50, 30);
+    // add(100, 20);
 </script>

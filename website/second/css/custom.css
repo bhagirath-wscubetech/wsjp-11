@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+}
+
+#first {
+    background: url('../images/bg_img.jpg') top center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.content {
+    font-size: 20px;
+    text-align: right;
+    line-height: 30px;
+}
+
+nav {
+    margin-top: 20px;
+    width: 100%;
+    padding: 17px 0;
+    background: url('../images/menu_rept.jpg');
+    border-radius: 10px;
+}
+
+#menu-bar {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.why-choose-box {
+    width: 100%;
+    border: 1px black solid;
+    display: flex;
+}
+
+.choose-item {
+    flex-grow: 1;
+    flex-basis: 33%;
+    height: 100%;
+    border: 1px red solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-item h5 {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.choose-item img {
+    width: 65px;
+    height: 51px;
+}
+
+.choose-item p {
+    width: 223px;
+    font-size: 12px;
+    font-family: Arial;
+    color: #545d63;
+    line-height: 17px;
+}
+
+.middle {
+    margin-top: 30px;
+}
+
+.middle h4 {
+    padding: 10px 0;
+}
+
+.bottom-row {
+    margin: 50px auto;
+    border: 2px red solid;
+    display: flex;
+    gap: 30px;
+}
+
+.domain-reg {
+    width: 30%;
+    display: flex;
+    gap: 30px;
+}
+
+.client-view {
+    display: flex;
+    width: 70%;
+    gap: 30px;
+}
+
+.bottom-row p {
+    color: #454545;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.career{
+    margin-bottom: 30px;
+}

@@ -2,36 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        #course > li {
-            /* direct child */
-            border: 1px red solid;
+        .test {
+            color: red;
+            padding-left: 20px;
+        }
+
+        .demo~.test {
+            border: 1px black solid;
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <ul id="course">
-        <li>
-            Frontend
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JS</li>
-            </ul>
-        </li>
-        <li>
-            Backend
-            <ul>
-                <li>NodeJS</li>
-                <li>Express</li>
-                <li>MongoDb</li>
-            </ul>
-        </li>
-    </ul>
+    <div class="demo">
+        HII
+    </div>
+    <div class="test">
+        HELLO
+        <div class="test">
+            THERE
+        </div>
+    </div>
+
 </body>
 
 </html>

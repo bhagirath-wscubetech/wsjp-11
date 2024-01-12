@@ -1,29 +1,23 @@
-<button onclick="details.getDetails()">Click Me</button>
-<button onclick="emp.demo()">Click Me2</button>
-<script>
-    // var a = "Testing";
-    // var b = "Hello";
-    // console.log("This is " + b + "-" + a);
-    // es6 template literals
-    // console.log(`This is ${b}-${a}`);
+<!DOCTYPE html>
+<html lang="en">
 
-    var details = {
-        name: "Bhagirath",
-        email: "bhagirath@wscubetech.com",
-        contact: "123456789",
-        getDetails: function () {
-            console.log(`The email of ${this.name} is ${this.email} - ${2 + 2}`);
-        }
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    var emp = {
-        name: "Prem",
-        salary: 1000000,
-        age: 30,
-        demo: function () {
-            console.log(`The salary of ${this.name} is ${this.salary}`);
-        }
-    }
+<body>
+    <h1 class="test">Hello</h1>
+    <h1 class="test">Hiii</h1>
+    <h1 class="test">Everyone</h1>
+    <h1 id="demo">bhagirath</h1>
+    <script>
+        var testBox = document.getElementsByTagName("h1");
+        // var testBox = document.getElementsByClassName("test");
+        // var testBox = document.getElementById("demo");
+        console.log(testBox);
+    </script>
+</body>
 
-    console.log(emp.name);
-</script>
+</html>

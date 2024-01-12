@@ -2,35 +2,51 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
     <style>
         .parent {
-            width: 1200px;
-            height: 600px;
-            border: 2px red solid;
-            margin: auto;
+            width: 1000px;
+            height: 400px;
             display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-            justify-content: space-evenly;
+            border: 2px black solid;
+
         }
 
         .box {
-            width: 100px;
-            font-size: 40px;
-            text-align: center;
-            height: 100px;
-            border: 1px black solid;
+            font-size: 50px;
+            width: 250px;
+            height: 250px;
+            box-sizing: border-box;
+            transition: 1s;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box:hover {
+            flex-shrink: 0;
         }
     </style>
 </head>
 
 <body>
     <div class="parent">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
+        <div class="box">
+            <img src="https://picsum.photos/200/300?random=2" />
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/200/300?random=3" />
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/200/300?random=4" />
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/200/300?random=5" />
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/200/300?random=6" />
+        </div>
     </div>
 </body>
 

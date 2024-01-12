@@ -2,50 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        .parent {
-            width: 300px;
-            height: 300px;
-            position: relative;
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-sizing: border-box;
         }
 
-        .parent img {
+        .nav {
             width: 100%;
-            height: 100%;
-            position: absolute;
-            transition: 0.5s;
+            height: 50px;
+            background: white;
+            box-shadow: 0px 0px 3px grey;
+            position: sticky;
             top: 0;
-            left: 0;
+            z-index: 99999;
         }
 
-        .parent img:nth-child(1) {
-            position: static;
-            z-index: 9999;
+        .banner {
+            margin-top: 20px;
+            width: 100%;
+            height: 650px;
+            background: linear-gradient(67deg, #E71D3A 0%, #ECC7C1 45%, #EFCAC4 58%, #E4BDB8 70%, #42A8FE 100%);
+            position: relative;
+            z-index: 0;
         }
 
-        .parent:hover img:nth-child(2) {
-            left: 300px;
+        .banner img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
 
-        .parent:hover img:nth-child(3) {
-            left: 600px;
+        .container {
+            width: 1000px;
+            margin: auto;
         }
 
-        .parent:hover img:nth-child(4) {
-            left: 900px;
+        p {
+            position: relative;
+            margin: 10px;
+            background: lightpink;
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="parent">
-        <img src="img/b2.jpg" alt="">
-        <img src="img/b3.jpg" alt="">
-        <img src="img/b4.jpg" alt="">
-        <img src="img/b1.jpg" alt="">
+
+    <div class="banner">
+        <img src="banner.png" alt="">
+    </div>
+
+    <div class="nav">
+        <h1>WsCube Tech</h1>
+    </div>
+
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima itaque ipsa sit quibusdam vel ut? Cumque,
+            laboriosam pariatur, qui dolor eum aperiam molestiae cupiditate dicta sequi eveniet blanditiis, molestias
+            et?</p>
+        <p>Recusandae repellendus at quae obcaecati iusto. Rerum, porro minus? Repellat fugit dignissimos voluptatem
+            cupiditate ad nemo asperiores, minus distinctio magni dolor dolores. Illum vero odit ea, est commodi unde
+            fuga.</p>
+        <p>Dolorum consectetur aut ab rem cumque. Inventore recusandae voluptatum dolor obcaecati voluptatibus. Est
+            minima dignissimos quas a numquam repellat sit, eveniet placeat autem ex harum nihil commodi consectetur
+            quisquam optio?</p>
+        <p>Sit dolorum nobis animi, blanditiis vero earum consequuntur officiis odio facere repellendus impedit
+            asperiores? Velit expedita praesentium quas odio alias blanditiis soluta nesciunt iste, consectetur illum
+            voluptate corporis obcaecati molestiae.</p>
+        <p>Dolores necessitatibus voluptatum at obcaecati! Praesentium non omnis minima minus iste sequi quas eos.
+            Corrupti fugiat laudantium rem praesentium quis labore, repellendus nisi unde illum minima blanditiis totam
+            nobis dignissimos?</p>
+        <p>Ipsa labore deleniti itaque atque esse neque dolores adipisci, temporibus dolor! Quod itaque optio assumenda
+            quas nihil non consequatur omnis! Itaque nobis porro vero deserunt unde commodi error distinctio cum.</p>
+        <p>Itaque aperiam voluptates nam maiores reprehenderit. Laboriosam inventore aliquid labore doloribus eaque
+            mollitia laudantium quasi in? Ex, veniam obcaecati. Labore debitis voluptas alias officia aperiam quasi
+            necessitatibus dicta cum aliquam.</p>
+        <p>Odio aspernatur assumenda architecto, est totam sapiente nemo at quo nesciunt voluptates suscipit quia ipsam
+            omnis similique non quae nihil! Provident, harum? Illo quae, alias fugit et dignissimos tenetur repellat.
+        </p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+        <p>Provident commodi ullam, officia obcaecati consectetur eligendi! Culpa veniam corrupti officia autem vero
+            alias. Dolorem tempora laborum quidem facere dolor quod reiciendis veritatis repellendus nihil, odio
+            eligendi corporis aliquid neque!</p>
+        <p>Nobis, quam quae, dolores odit asperiores, adipisci saepe sapiente voluptates nisi voluptatem reiciendis.
+            Dolore commodi praesentium, voluptate id tenetur mollitia repellat nulla maiores, odit officiis provident
+            dolor asperiores libero iste!</p>
+
     </div>
 </body>
 

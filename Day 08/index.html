@@ -2,26 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        body{
-            margin:0;
+        .main {
+            width: 1000px;
+            height: 600px;
+            background: red;
         }
-        .box{
+
+        .row1 {
+            width: 1000px;
+            height: 50px;
+            background: blue;
+        }
+
+        .row2 {
+            width: 1000px;
+            height: 50px;
+            background: forestgreen;
+        }
+
+        .row3 {
+            width: 1000px;
+            height: 200px;
+            background: darkcyan;
+        }
+
+        .r3-col1 {
             width: 400px;
-            height: 400px;
-            border:2px red solid;
-            margin: 10px;
+            height: 200px;
+            background: darkorange;
             float: left;
         }
+
+        .r3-col2 {
+            width: 300px;
+            height: 200px;
+            background: darkgoldenrod;
+            float: left;
+        }
+
+        .r3-col3 {
+            width: 300px;
+            height: 200px;
+            background: darkkhaki;
+            float: left;
+        }
+        .box1{
+            width:400px;
+            height: 60px;
+            background: lightcoral;
+        }
+        .box2{
+            width: 400px;
+            height: 60px;
+            background: lightgreen;
+        }
+        .box3{
+            width:400px;
+            height: 80px;
+            background: khaki;
+        }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="main">
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3">
+            <div class="r3-col1">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+            <div class="r3-col2"></div>
+            <div class="r3-col3"></div>
+        </div>
+    </div>
 </body>
 
 </html>

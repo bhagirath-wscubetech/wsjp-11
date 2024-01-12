@@ -1,1 +1,2 @@
-document.write('Hello from external')
+console.log("Hello from external");
+document.write("Hello from external");

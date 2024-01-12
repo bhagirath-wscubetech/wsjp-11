@@ -1,144 +1,38 @@
 <script>
-    // recursion -> function calling itself untill a condition is reached
-    function fact(num, prod = 1) {
-        // default value for a argu
-        prod = prod * num;
-        // prod = 1 * 5 => 5;
-        // prod = 4 * 5 => 20;
-        // prod = 3 * 20 => 60
-        // prod = 2 * 60 => 120
-        // prod = 1 * 60 => 120
-        num--;
-        // num = 4;
-        // num = 3
-        // num = 2
-        // num = 1;
-        // num = 0
-        if (num != 0) {
-            fact(num, prod);// recursion
-            // fact(4,5);
-            // fact(3,20);
-            // fact(2,60);
-            // fact(1,120);
-        }else{
-            console.log(prod);
+    // find the reverse array 
+    function rev(arr) {
+        var res = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            res.push(arr[i]);
         }
+        return res;
     }
-    fact(5);
+    var numbers = ["A", "B", "C", "D", "E", "F", "X"];
+    var result = rev(numbers);
+    console.log(result);
 
-    // function findFact(num) {
-    //     var fact = 1;
-    //     while (num != 0) {
-    //         fact = fact * num;
-    //         num--;
-    //     }
-    //     console.log(fact);
-    // }
-    // findFact(3);
-    // findFact(5);
-    // findFact(7);
+    var names = ["Ram", "Sita", "Shyam", "Ramesh", "Jenny"];
+    var revNames = rev(names);
+    console.log(revNames);
 
 
 
-    // var arr1 = [4, 6, 8, 9, 11, 21, 500, 302, 32];
-
-    // function fiterArr(arr) {
-    //     var odd = [];
-    //     var even = [];
-
-    //     for (num of arr) {
-    //         if (num % 2 == 0) {
-    //             even.push(num);
-    //         } else {
-    //             odd.push(num);
+    // find prime number between a range
+    // function rangePrime(start, end) {
+    //     for (var i = start; i <= end; i++) {
+    //         var isPrime = true;
+    //         for (var j = 2; j < i; j++) {
+    //             if (i % j == 0) {
+    //                 isPrime = false;
+    //                 break;
+    //             }
+    //         }
+    //         if (isPrime == true) {
+    //             console.log(i);
     //         }
     //     }
-
-    //     console.log(even);
-    //     console.log(odd);
-
     // }
 
-    // fiterArr(arr1);
+    // rangePrime(10, 40);
 
-
-
-
-
-    // var arr2 = [14, 16, 18, 19, 32];
-    // var arr1 = [4, 6, 8, 9, 10, 20, 500, 300, 32];
-
-    // function revArr(arr) {
-    //     var result = [];
-    //     for (var i = arr.length - 1; i >= 0; i--) {
-    //         result.push(arr[i]);
-    //     }
-    //     return result;
-    // }
-
-    // var kuchBhi = revArr(arr1);
-    // console.log(kuchBhi);
-
-    // var kuchBhi2 = revArr(arr2);
-    // console.log(kuchBhi2);
-
-
-    // function btnCheckPrime() {
-    //     var num = prompt("Please enter a number");
-    //     var isPrime = true;
-    //     for (var i = 2; i < num; i++) {
-    //         if (num % i == 0) {
-    //             isPrime = false;
-    //             break;
-    //         }
-    //     }
-    //     console.clear();
-    //     console.log(num, isPrime);
-    // }
-
-    // function checkPrime(num) {
-    //     var isPrime = true;
-    //     for (var i = 2; i < num; i++) {
-    //         if (num % i == 0) {
-    //             isPrime = false;
-    //             break;
-    //         }
-    //     }
-    //     return isPrime;
-    // }
-
-    // for(var i=1;i<=100;i++){
-    //     if(checkPrime(i) == true){
-    //         console.log(i);
-    //     }
-    // }
-
-
-    // function sumOfArr(arr) {
-    //     var total = 0;
-    //     for (num of arr) {
-    //         total += num;
-    //         // total = total + num;
-    //     }
-    //     return total;
-    // }
-
-    // var arr1 = [4, 6, 8, 9, 10, 20, 500, 300, 32];
-    // var res1 = sumOfArr(arr1);
-    // console.log(res1);
-
-    // var arr2 = [4, 23, 4, 63, 56, 54, 6, 34, 221];
-    // var res2 = sumOfArr(arr2);
-    // console.log(res2);
-
-
-    // function mToKm(num) {
-    //     return num / 1000;
-    // }
-
-    // var res1 = mToKm(3000);
-    // console.log(res1);
-
-    // var res2 = mToKm(6000);
-    // console.log(res2);
 </script>

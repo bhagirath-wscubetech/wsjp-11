@@ -2,73 +2,32 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
     <style>
-        .parent {
-            width: 1000px;
-            height: 600px;
-            margin: auto;
-            border: 1px black solid;
-            position: relative;
-        }
-
         .box {
-            width: 100px;
-            height: 100px;
-            background: firebrick;
-            position: absolute;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0px 0px 2px grey;
+            margin: auto;
+            background: #3498db;
             transition: 1s;
+            transform-origin: bottom center;
         }
 
-        .parent:hover .box:nth-child(1) {
-            top: 200px;
-            left: 400px;
+        h1 {
+            text-align: center;
+            padding: 30px 0;
         }
 
-        .parent:hover .box:nth-child(2) {
-            top: 200px;
-            right: 400px;
-        }
-
-        .parent:hover .box:nth-child(3) {
-            right: 400px;
-            bottom: 200px;
-        }
-
-        .parent:hover .box:nth-child(4) {
-            left: 400px;
-            bottom: 200px;
-        }
-
-
-        .box:nth-child(1) {
-            top: 0;
-            left: 0;
-        }
-
-        .box:nth-child(2) {
-            top: 0;
-            right: 0;
-        }
-
-        .box:nth-child(3) {
-            bottom: 0;
-            right: 0;
-        }
-
-        .box:nth-child(4) {
-            bottom: 0;
-            left: 0;
+        .box:hover {
+            transform: scaleY(1.5);
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="parent">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+    <div class="box">
+        <h1>Hello World</h1>
     </div>
 </body>
 

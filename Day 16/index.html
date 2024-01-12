@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        .box{
-            font-size: 50px;
-            text-align: center;
-            width: 200px;
-            height: 200px;
-            border:2px solid red;
-            margin: 5px;
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px black solid;
+            margin: 100px;
             float: left;
+            font-size: 100px;
+            text-align: center;
         }
-        .box:nth-child(2){
-            color:brown;
-            position: fixed;
-            left:0;
-            top: 0;
+
+        .demo {
+            transition: 1s;
+        }
+
+        .demo:hover {
+            transform: translate(50px, 50px);
         }
     </style>
+    <title>Document</title>
 </head>
 
 <body>
     <div class="box">1</div>
-    <div class="box">2</div>
+    <div class="box demo">2</div>
     <div class="box">3</div>
 </body>
 

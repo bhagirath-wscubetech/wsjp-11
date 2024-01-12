@@ -3,24 +3,60 @@
 
 <head>
     <style>
-        #box {
-            width: 600px;
-            height: 400px;
-            font-size: 60px;
-            border: 2px solid red;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #demo {
+            margin: auto;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            font-size: 50px;
+            border: 2px black solid;
+        }
+
+        button {
+            width: 200px;
+            font-size: 30px;
+            padding: 10px;
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
 
 <body>
-    <div id="box">
-        <h1>Kuch aur 2</h1>
-    </div>
+    <h1 id="demo">
+        <i>0</i>
+    </h1>
+    <button onclick="desc()">-</button>
+    <button onclick="inc()">+</button>
+    <button onclick="empty()">Empty</button>
 
     <script>
-        var a = document.getElementById("box");
-        console.log(a.innerText);
-        console.log(a.innerHTML);
+        var demoBox = document.getElementById("demo");
+        var count = 0;
+        function empty() {
+            demoBox.innerText = 0;
+        }
+
+        function inc() {
+            if (count == 10) return;
+
+            count++;
+            // demoBox.innerText = `<i> ${count} </i>`; //set
+            demoBox.innerHTML = `<i style="color:red"> ${count} </i>`; //set
+        }
+        function desc() {
+            if (count == 0) return;
+            
+            count--;
+            // demoBox.innerText = `<i> ${count} </i>`; //set
+            demoBox.innerHTML = `<i style="color:red"> ${count} </i>`; //set
+        }
     </script>
 </body>
 

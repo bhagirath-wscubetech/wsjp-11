@@ -2,91 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .main {
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
             width: 1000px;
+            height: 400px;
             margin: auto;
-            border: 1px red solid;
+            border: 1px black solid;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            font-size: 50px;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0px 0px 2px grey;
             padding: 10px;
         }
-
-        .row {
-            margin: 30px 0;
-        }
-
-        .input-label {
-            width: 200px;
-            display: inline-block;
-        }
-
-        label,
-        input,
-        textarea,
-        select {
-            font-size: 30px;
+        .box img{
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div class="main">
-        <form>
-            <div class="row">
-                <label for="name" class="input-label">Name</label>
-                <input type="text" id="name" maxlength="10" name="user_name" placeholder="Please enter name">
-            </div>
-            <div class="row">
-                <label for="f_name" class="input-label">Father Name</label>
-                <input type="text" id="f_name" maxlength="10" name="user_father_name" value="Ramesh">
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Email</label>
-                <input type="email" name="user_email">
-                <input type="email" name="user_email" value="@gmail.com" readonly>
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Password</label>
-                <input type="password" name="user_password">
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Gender</label>
-                <label for="m">Male</label> <input  type="radio" id="m" value="M" name="u_gender">
-                <label for="f">Female</label> <input checked type="radio" id="f" value="F" name="u_gender">
-                <label for="o">Other</label> <input type="radio" id="o" value="O" name="u_gender">
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Addons</label>
-                <label for="">Salad</label> <input checked type="checkbox">
-                <label for="">Dahi</label> <input checked type="checkbox">
-                <label for="">Papad</label> <input type="checkbox">
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Country</label>
-                <select name="u_country">
-                    <option value="">Select a country</option>
-                    <option value="+91">India</option>
-                    <option value="+01" selected>America</option>
-                    <option value="+94">Nepal</option>
-                    <option value="+92">Sri Lanka</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Age</label>
-                <input type="number" min="18" max="40" name="user_age">
-            </div>
-            <div class="row">
-                <label for="" class="input-label">Address</label>
-                <textarea maxlength="150" name="user_address"></textarea>
-            </div>
-            <div class="row">
-                <input type="submit" value="Save" disabled>
-                <input type="reset">
-            </div>
-        </form>
+    <div class="parent">
+        <div class="box">
+            <img src="img/b1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="img/b4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="img/b2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="img/b3.jpg" alt="">
+        </div>
     </div>
+
+    <script>
+        var boxes = document.querySelectorAll(".box");
+
+        boxes.forEach(
+            (box) => {
+                const  order = Math.floor(Math.random()*100);
+                box.style.order = order;
+            }
+        )
+    </script>
 </body>
 
 </html>
