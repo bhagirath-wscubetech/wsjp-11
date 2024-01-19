@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="gap-[10px] max-w-[1200px] mx-auto grid grid-cols-5">
-      <Filter rating={rating} ratingHandler={setRating} range={range} rangeHandler={setRange} categories={categories} cat={cat} catHandler={catHandler} />
+      <Filter rating={rating} ratingHandler={setRating} range={range} rangeHandler={setRange} categories={categories} cat={cat} catHandler={catHandler} products={products}/>
       <Listing rating={rating} range={range} products={products} cat={cat} />
     </div>
   );

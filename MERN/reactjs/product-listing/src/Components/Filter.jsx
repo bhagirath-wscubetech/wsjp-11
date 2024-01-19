@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-export default function Filter({ rating, ratingHandler, categories, cat, catHandler, range, rangeHandler }) {
+export default function Filter({ products, rating, ratingHandler, categories, cat, catHandler, range, rangeHandler }) {
     const ratingForm = useRef();
 
     const clearFilter = () => {
@@ -8,6 +8,17 @@ export default function Filter({ rating, ratingHandler, categories, cat, catHand
         rangeHandler({ to: 0, from: 0 });
         ratingHandler(null);
         ratingForm.current.reset();
+    }
+
+
+    const getItemsCount = (category) => {
+        let itemCount = 0;
+        for (let p of products) {
+            if (p.category == category) {
+                itemCount++;
+            }
+        }
+        return "(" + itemCount + ")";
     }
 
     return (
@@ -18,13 +29,15 @@ export default function Filter({ rating, ratingHandler, categories, cat, catHand
                 <ul className='items-box'>
                     <li onClick={() => catHandler(null)} className={`capitalize duration-[250ms] cursor-pointer p-2 border-b
                             ${cat.length == 0 ? 'active-cat' : ''}
-                        `}> All </li>
+                        `}> All ({products.length})</li>
                     {
                         categories.map(
                             (category, index) => {
                                 return <li onClick={() => catHandler(category)} className={`duration-[250ms] capitalize cursor-pointer p-2
                                 ${cat.indexOf(category) != -1 ? 'active-cat' : ''}
-                                ${(index == categories.length - 1) ? '' : 'border-b'}`} key={index}>{category}</li>
+                                ${(index == categories.length - 1) ? '' : 'border-b'}`} key={index}>
+                                    {category} {cat.indexOf(category) != -1 ? getItemsCount(category) : ""}
+                                </li>
                             }
                         )
                     }
