@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
+import { MainCotext } from '../Context/Index';
 
-export default function Filter({ products, rating, ratingHandler, categories, cat, catHandler, range, rangeHandler }) {
+export default function Filter({ rating, ratingHandler, categories, cat, catHandler, range, rangeHandler }) {
     const ratingForm = useRef();
+    const {products} = useContext(MainCotext);
 
     const clearFilter = () => {
         catHandler(null);

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { MainCotext } from '../Context/Index';
 
-export default function Listing({ products, cat, range, rating }) {
-
+export default function Listing({ cat, range, rating }) {
+    let { products } = useContext(MainCotext);
+    const { addToCart } = useContext(MainCotext);
     if (cat.length != 0) {
         products = products.filter(
             (prod) => {
@@ -41,7 +43,7 @@ export default function Listing({ products, cat, range, rating }) {
         <div className='col-span-4'>
             <div className='px-2 my-3'>
                 {products.length} items found
-                <hr  className='my-1'/>
+                <hr className='my-1' />
             </div>
             <div className="mx-auto max-w-2xl px-4  sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -54,21 +56,20 @@ export default function Listing({ products, cat, range, rating }) {
                                             <img
                                                 src={product.image}
                                                 alt="Front of men's Basic Tee in black."
-                                                className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                                className="w-full object-cover object-center h-[250px]"
                                             />
                                         </div>
                                         <div className="mt-4 flex gap-2 justify-between">
                                             <div>
                                                 <h3 className="text-sm text-gray-700">
-                                                    <a href="#">
-                                                        <span aria-hidden="true" className="absolute inset-0" />
-                                                        {product.title}
-                                                    </a>
+                                                    <span aria-hidden="true" className="absolute inset-0" />
+                                                    {product.title}
                                                 </h3>
                                                 <p className="mt-1 text-sm text-gray-500">{product.rating.rate} / 5</p>
                                             </div>
                                             <p className="text-sm font-medium text-gray-900">${product.price}</p>
                                         </div>
+                                        <button onClick={() => addToCart(product.id)} className='z-[999999] relative w-full block bg-blue-400 p-2 my-2 rounded text-white'>Cart</button>
                                     </div>
                                 )
                             }
