@@ -1,0 +1,48 @@
+<script>
+    const data = {
+        "123": {
+            name: "Bhagirath",
+            gender: "M"
+        },
+        "243": {
+            name: "Nikita",
+            gender: "F"
+        },
+        "231": {
+            name: "Sandeep",
+            gender: "M"
+        }
+    }
+    console.log(data);
+    // step 1: Get the keys of that object
+    const keys = Object.keys(data);
+    console.log(keys);
+    // step 2: get the data from the keys and push to array
+
+    const quiz = keys.map(
+        (k) => {
+            return {
+                id: k,
+                ...data[k]
+            }
+        }
+    )
+    console.log(quiz);
+
+
+    // const quiz = [];
+
+    // keys.forEach(
+    //     (k) => {
+    //         // console.log(k);
+    //         // console.log(data[k]);
+    //         quiz.push(
+    //             {
+    //                 id: k,
+    //                 ...data[k]
+    //             }
+    //         );
+    //     }
+    // )
+    // console.log(quiz);
+</script>
