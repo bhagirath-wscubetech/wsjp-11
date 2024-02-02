@@ -1,12 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { MainContext } from '../Context/Main';
 import { useNavigate } from 'react-router-dom/dist';
 
 const Login = () => {
-    const { loginUser } = useContext(MainContext);
+    const { loginUser, user } = useContext(MainContext);
     const navigate = useNavigate();
+
+    useEffect(
+        () => {
+            if(user != null){
+                navigate("/play");
+            }
+        },
+        [user]
+    )
 
     const loginHandler = (event) => {
         event.preventDefault();
