@@ -30,7 +30,7 @@ function App() {
       email: event.target.email.value,
       password: event.target.password.value,
     }
-    axios.post("http://localhost:5000/add-user", JSON.stringify(data))
+    axios.post("http://localhost:5000/add-user", data)
       .then(
         (success) => {
           event.target.reset();
@@ -43,7 +43,7 @@ function App() {
       )
   }
   function deleteUser(userId) {
-    axios.delete(`http://localhost:5000/delete-user?id=${userId}`)
+    axios.delete(`http://localhost:5000/delete-user/${userId}`)
       .then(
         (success) => {
           fetchUser()
