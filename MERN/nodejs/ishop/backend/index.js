@@ -1,10 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const CategoryRouter = require('./routers/category');
+const ColorRouter = require('./routers/color');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
+
+
+app.use("/category", CategoryRouter);
+app.use("/color", ColorRouter);
 
 mongoose.connect(
     "mongodb://localhost:27017",

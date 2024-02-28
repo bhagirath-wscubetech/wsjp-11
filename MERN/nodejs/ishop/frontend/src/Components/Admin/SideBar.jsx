@@ -5,7 +5,7 @@ import { MdCategory } from "react-icons/md";
 
 export default function SideBar() {
     return (
-        <div className='bg-gray-600 h-screen'>
+        <div className='bg-gray-600 min-h-screen'>
             <h2 className='text-white text-4xl text-center my-3'>ISHOP Admin</h2>
             <hr />
 
@@ -18,6 +18,11 @@ export default function SideBar() {
                 <Link to={'/admin/category'}>
                     <li className='flex gap-3 items-center'>
                         <MdCategory />  Category
+                    </li>
+                </Link>
+                <Link to={'/admin/color'}>
+                    <li className='flex gap-3 items-center'>
+                        <MdCategory />  Color
                     </li>
                 </Link>
                 <Link to={'/admin/product'}>
