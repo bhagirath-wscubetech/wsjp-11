@@ -5,6 +5,13 @@ import { Context } from '../../../Context/MainContext';
 import { MdDelete } from 'react-icons/md';
 import { CiEdit } from 'react-icons/ci';
 export default function View() {
+    const { fetchProduct, API_BASE_URL, products, productImageUrl } = useContext(Context);
+
+    useEffect(
+        () => {
+            fetchProduct();
+        }, []
+    )
 
     return (
         <div className='py-7 px-3'>
@@ -27,7 +34,16 @@ export default function View() {
                                 Name
                             </th>
                             <th scope="col" className="px-6 py-3">
+                                Slug
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Category
+                            </th>
+                            <th scope="col" className="px-6 py-3">
                                 Color
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Image
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Status
@@ -38,7 +54,58 @@ export default function View() {
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        {products.map(
+                            (product, index) => {
+                                return (
+                                    <tr key={product._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <td scope="row" className="px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white">
+                                            {index + 1}
+                                        </td>
+                                        <td scope="row" className="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                            {product.name}
+                                            <br />
+                                            Original ₹ {product.price}
+                                            <br />
+                                            Discounted ₹ {product.discount_price}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {product.slug}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {product.category_id.name}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <ul>
+                                                {
+                                                    product.color.map(
+                                                        (color) => {
+                                                            return <li>{color.name}</li>
+                                                        }
+                                                    )
+                                                }
+                                            </ul>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {/* {cat.image} */}
+                                            <img width={150} src={API_BASE_URL + productImageUrl + product.image} alt="" />
+                                        </td>
+                                        <td className="px-6 py-4 text-white">
+                                            {
+                                                product.status == true
+                                                    ? <button className='p-2 border bg-green-500'>Active</button>
+                                                    : <button className='p-2 border bg-orange-500'>Inactive</button>
+                                            }
+                                        </td>
+                                        <td className="px-6 py-4 text-xl flex gap-3">
+                                            <MdDelete className='cursor-pointer text-red-500' />
+                                            <Link to={"/admin/product/edit/" + product._id}>
+                                                <CiEdit className='cursor-pointer' />
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                )
+                            }
+                        )}
                     </tbody>
                 </table>
             </div>

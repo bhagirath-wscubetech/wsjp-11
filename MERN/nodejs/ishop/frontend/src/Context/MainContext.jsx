@@ -13,6 +13,25 @@ export default function MainContext(props) {
     const CATEGORY_BASE_URL = process.env.REACT_APP_CATEGORY_BASE_URL;
     const [colors, setColor] = useState([]);
     const COLOR_BASE_URL = process.env.REACT_APP_COLOR_BASE_URL;
+    const PRODUCT_BASE_URL = process.env.REACT_APP_PRODUCT_BASE_URL;
+    const [products, setProduct] = useState([]);
+    const [productImageUrl, setProductImageUrl] = useState("");
+
+    const fetchProduct = () => {
+        axios.get(API_BASE_URL + PRODUCT_BASE_URL)
+            .then(
+                (success) => {
+                    if (success.data.status == 1) {
+                        setProduct(success.data.product);
+                        setProductImageUrl(success.data.imageBaseUrl)
+                    }
+                }
+            ).catch(
+                () => {
+
+                }
+            )
+    }
 
     const fetchCategory = () => {
         axios.get(API_BASE_URL + CATEGORY_BASE_URL)
@@ -62,7 +81,7 @@ export default function MainContext(props) {
     )
 
     return (
-        <Context.Provider value={{ openToast, categoryImageUrl, fetchCategory, category, API_BASE_URL, CATEGORY_BASE_URL, COLOR_BASE_URL, colors, fetchColor }}>
+        <Context.Provider value={{ products, productImageUrl, fetchProduct, openToast, categoryImageUrl, fetchCategory, category, API_BASE_URL, CATEGORY_BASE_URL, COLOR_BASE_URL, colors, fetchColor, PRODUCT_BASE_URL }}>
             <ToastContainer />
             {props.children}
         </Context.Provider>

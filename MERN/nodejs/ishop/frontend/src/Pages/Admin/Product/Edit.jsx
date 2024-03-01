@@ -2,15 +2,55 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
 import { Context } from '../../../Context/MainContext';
 import { FileUploader } from "react-drag-drop-files";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 
-export default function Add() {
-    const { fetchCategory, openToast, PRODUCT_BASE_URL, API_BASE_URL, category, fetchColor, colors } = useContext(Context);
+export default function Edit() {
+    const { fetchCategory, openToast, productImageUrl, PRODUCT_BASE_URL, API_BASE_URL, category, fetchColor, colors } = useContext(Context);
+    const { id } = useParams();
+    const [editProduct, setEditProduct] = useState(null);
     const navigator = useNavigate();
     const [file, setFile] = useState(null);
     const [prodCategory, setProdCategory] = useState(null);
     const [prodColor, setProdColor] = useState(null);
+
+    useEffect(
+        () => {
+            if (id != null) {
+                axios.get(API_BASE_URL + PRODUCT_BASE_URL + "/" + id)
+                    .then(
+                        (success) => {
+                            if (success.data.status == 1) {
+                                setEditProduct(success.data.product);
+                            } else {
+
+                            }
+                        }
+                    ).catch(
+                        () => {
+
+                        }
+                    )
+            }
+        },
+        [id]
+    )
+
+    useEffect(
+        () => {
+            if (editProduct != null || editProduct != undefined) {
+                setProdCategory({ value: editProduct?.category_id._id, label: editProduct?.category_id.name })
+                const colorData = editProduct?.color.map(
+                    (color) => {
+                        return { value: color._id, label: color.name }
+                    }
+                );
+                setProdColor(colorData)
+            }
+        },
+        [editProduct]
+    )
+
     const handleChange = (file) => {
         setFile(file);
     };
@@ -53,13 +93,13 @@ export default function Add() {
         const discountPer = discount_pre_ref.current.value;
         if (price != "" && discountPer != "") {
             const d = price * (discountPer / 100);
-            discount_price_ref.current.value = price - d;
+            return price - d;
         }
     }
 
-    const titleToSlug = () => {
-        const slug = nameRef.current.value.toLowerCase().trim().replaceAll(" ", "-").replaceAll("'", "");
-        slugRef.current.value = slug;
+    const titleToSlug = (title) => {
+        const slug = title.toLowerCase().trim().replaceAll(" ", "-").replaceAll("'", "");
+        return slug;
     }
 
     const formSubmitHandler = (e) => {
@@ -71,8 +111,9 @@ export default function Add() {
         formData.append("discount_precent", e.target.discount_per.value);
         formData.append("discount_price", e.target.discount_price.value);
         formData.append("image", file);
-        formData.append("category", prodCategory);
-        formData.append("color", JSON.stringify(prodColor));
+        formData.append("category", prodCategory.value);
+        const colorData = prodColor.map(color => color.value);
+        formData.append("color", JSON.stringify(colorData));
         axios.post(API_BASE_URL + PRODUCT_BASE_URL + "/create", formData)
             .then(
                 (success) => {
@@ -93,7 +134,7 @@ export default function Add() {
 
     return (
         <div className='shadow m-5 p-2'>
-            <div className='text-2xl'>Add Product</div>
+            <div className='text-2xl'>Edit Product</div>
             <hr className='my-2' />
             <form className="p-3" onSubmit={formSubmitHandler}>
                 <div className='grid grid-cols-2 gap-4'>
@@ -104,11 +145,22 @@ export default function Add() {
                             Product Name
                         </label>
                         <input
+                            onChange={
+                                (e) => {
+                                    setEditProduct(
+                                        {
+                                            ...editProduct,
+                                            name: e.target.value,
+                                            slug: titleToSlug(e.target.value)
+                                        }
+                                    )
+                                }
+                            }
                             type="text"
                             ref={nameRef}
+                            value={editProduct?.name}
                             id="name"
                             name='name'
-                            onChange={titleToSlug}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             required=""
                         />
@@ -120,6 +172,7 @@ export default function Add() {
                             Product Slug
                         </label>
                         <input
+                            value={editProduct?.slug}
                             readOnly
                             ref={slugRef}
                             type="text"
@@ -138,7 +191,18 @@ export default function Add() {
                             ₹ Price
                         </label>
                         <input
-                            onChange={calDiscount}
+                            onChange={
+                                (e) => {
+                                    setEditProduct(
+                                        {
+                                            ...editProduct,
+                                            price: e.target.value,
+                                            discount_price: calDiscount()
+                                        }
+                                    )
+                                }
+                            }
+                            value={editProduct?.price}
                             ref={price_ref}
                             type="number"
                             id="price"
@@ -154,7 +218,18 @@ export default function Add() {
                             Discount (%)
                         </label>
                         <input
-                            onChange={calDiscount}
+                            value={editProduct?.discount_precent}
+                            onChange={
+                                (e) => {
+                                    setEditProduct(
+                                        {
+                                            ...editProduct,
+                                            discount_precent: e.target.value,
+                                            discount_price: calDiscount()
+                                        }
+                                    )
+                                }
+                            }
                             ref={discount_pre_ref}
                             defaultValue={0}
                             type="number"
@@ -173,6 +248,7 @@ export default function Add() {
                             ₹ Price After Discount
                         </label>
                         <input
+                            value={editProduct?.discount_price}
                             readOnly
                             ref={discount_price_ref}
                             type="number"
@@ -193,9 +269,10 @@ export default function Add() {
                         <Select
                             onChange={
                                 (option) => {
-                                    setProdCategory(option.value);
+                                    setProdCategory(option);
                                 }
                             }
+                            value={prodCategory}
                             className="basic-single"
                             classNamePrefix="select"
                             isSearchable={true}
@@ -213,10 +290,10 @@ export default function Add() {
                         <Select
                             onChange={
                                 (options) => {
-                                    const d = options.map((option) => option.value);
-                                    setProdColor(d)
+                                    setProdColor(options);
                                 }
                             }
+                            value={prodColor}
                             closeMenuOnSelect={false}
                             className="basic-single"
                             classNamePrefix="select"

@@ -9,6 +9,7 @@ import ColorView from "./Pages/Admin/Color/View";
 import ColorAdd from "./Pages/Admin/Color/Add";
 import ColorEdit from "./Pages/Admin/Color/Edit";
 import ProductAdd from "./Pages/Admin/Product/Add";
+import ProductEdit from "./Pages/Admin/Product/Edit";
 
 function App() {
   const routes = createBrowserRouter(
@@ -42,6 +43,10 @@ function App() {
           {
             path: "product/add",
             element: <ProductAdd />
+          },
+          {
+            path: "product/edit/:id",
+            element: <ProductEdit />
           },
           {
             path: "color",
