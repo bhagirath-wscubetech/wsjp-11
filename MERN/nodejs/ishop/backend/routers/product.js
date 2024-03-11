@@ -7,7 +7,7 @@ const ProductRouter = express.Router();
 ProductRouter.get(
     "/:id?",
     (req, res) => {
-        const result = new ProductController().read(req.params.id);
+        const result = new ProductController().read(req.params.id, req.query);
         result
             .then(
                 (success) => {

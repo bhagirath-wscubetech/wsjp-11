@@ -1,4 +1,7 @@
-const Product = require("../models/product")
+const Product = require("../models/product");
+const Category = require("../models/category");
+const Color = require("../models/color");
+const mongoose = require('mongoose');
 
 class ProductController {
     create(data, image) {
@@ -56,15 +59,35 @@ class ProductController {
             }
         )
     }
-    read(id) {
+    read(id, query) {
         return new Promise(
             async (res, rej) => {
                 try {
+                    const dbQuery = {};
+                    if (query.category_slug) {
+                        const category = await Category.findOne({ slug: query.category_slug });
+                        if (category != null) {
+                            dbQuery.category_id = category._id
+                        }
+                    }
+                    if (query.color_id != "null") {
+                        const color = await Color.findById(query.color_id);
+                        if (color != null) {
+                            dbQuery.color = color._id;
+                        }
+                    }
+                    console.log(dbQuery);
                     let product = [];
                     if (id) {
                         product = await Product.findById(id).populate(['category_id', 'color']);
                     } else {
-                        product = await Product.find().populate(['category_id', 'color']);
+                        if (query.limit != 0) {
+                            product = await Product.find(dbQuery).populate(['category_id', 'color'])
+                                .limit(query.limit);
+                        } else {
+                            product = await Product.find(dbQuery).populate(['category_id', 'color']);
+                        }
+
                     }
                     res({
                         msg: "Product found",

@@ -1,37 +1,41 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from '../../Components/Container';
 import ProductBox from '../../Components/Website/ProductBox';
+import { Context } from '../../Context/MainContext';
 
 export default function Home() {
-    const products = [
-        {
-            name: "Apple Macbook Pro",
-            img: "images/Apple Macbook Air.png",
-            price: 599,
-            discount: 499,
-            rating: 4,
-            hot:true
-        }, {
-            name: "Apple Macbook Pro",
-            img: "images/apple_macbook.png",
-            price: 599,
-            discount: 499,
-            rating: 3,
-            hot:true
-        }, {
-            name: "Apple Macbook Pro",
-            img: "images/Apple Macbook Air.png",
-            price: 599,
-            discount: 499,
-            rating: 4
-        }, {
-            name: "Apple Macbook Pro",
-            img: "images/Apple Macbook Air.png",
-            price: 599,
-            discount: 499,
-            rating: 4
-        },
-    ]
+    let { category, fetchCategory, setLoader, products, fetchProduct } = useContext(Context);
+    const [selCat, setSelCat] = useState(0);
+    const [filterProducts, setFilterProduct] = useState([]);
+    useEffect(
+        () => {
+            fetchCategory();
+            fetchProduct();
+        }, []
+    )
+    useEffect(
+        () => {
+            setLoader(true);
+            if (selCat != 0) {
+                const data = products.filter(
+                    (prod) => {
+                        if (prod.category_id._id == selCat) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                )
+                setFilterProduct(data);
+            }
+            setTimeout(
+                () => {
+                    setLoader(false);
+                },
+                300
+            )
+        }, [selCat]
+    )
     return (
         <>
             <div className='h-[500px] md:h-[650px] my-1 md:my-6 banner-bg'>
@@ -43,23 +47,29 @@ export default function Home() {
             <Container>
                 <div className='text-[30px] font-bold text-center uppercase'>Best Seller</div>
                 <ul className='md:flex hidden justify-center my-3 gap-10'>
-                    <li>All</li>
-                    <li>Mac</li>
-                    <li>iPhone</li>
-                    <li>iPad</li>
-                    <li>iPod</li>
-                    <li>Accessories</li>
+                    <li onClick={() => setSelCat(0)} className={`${selCat == 0 ? 'text-blue-500 font-bold ' : ''} cursor-pointer`}>All</li>
+                    {
+                        category.map(
+                            (cat) => {
+                                return <li onClick={() => setSelCat(cat._id)}
+                                    className={`${selCat == cat._id ? 'text-blue-500 font-bold' : ''} cursor-pointer`}>
+                                    {cat.name}</li>
+                            }
+                        )
+                    }
                 </ul>
-                <select className='mx-auto block md:hidden my-3 w-[70%] bg-[#F8F8F8] p-3 focus:outline-none'>
-                    <option>All</option>
-                    <option>Mac</option>
-                    <option>iPhone</option>
-                    <option>iPad</option>
-                    <option>iPod</option>
-                    <option>Accessories</option>
+                <select onChange={(e) => setSelCat(e.target.value)} className='mx-auto block md:hidden my-3 w-[70%] bg-[#F8F8F8] p-3 focus:outline-none'>
+                    <option value={0}>All</option>
+                    {
+                        category.map(
+                            (cat) => {
+                                return <option value={cat._id}>{cat.name}</option>
+                            }
+                        )
+                    }
                 </select>
             </Container>
-            <BestSeller products={products} />
+            <BestSeller products={selCat == 0 ? products : filterProducts} />
         </>
     )
 }

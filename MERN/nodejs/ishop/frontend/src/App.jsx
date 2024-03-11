@@ -10,6 +10,7 @@ import ColorAdd from "./Pages/Admin/Color/Add";
 import ColorEdit from "./Pages/Admin/Color/Edit";
 import ProductAdd from "./Pages/Admin/Product/Add";
 import ProductEdit from "./Pages/Admin/Product/Edit";
+import Store from "./Pages/Website/Store";
 
 function App() {
   const routes = createBrowserRouter(
@@ -21,6 +22,10 @@ function App() {
           {
             path: "",
             element: <Home />
+          },
+          {
+            path: "store/:category_slug?",
+            element: <Store/>
           }
         ]
       },
